@@ -3,7 +3,8 @@ import { Link } from 'react-scroll';
 //import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { AiOutlineGithub } from 'react-icons/ai';
 import { logo } from '../../assets/index';
 import { navLinksdata } from '../../constants';
 
@@ -16,23 +17,15 @@ const Navbar = () => {
       </div>
       <div>
         <ul className='hidden mdl:inline-flex items-center gap-6 lg:gap-10'>
-          {navLinksdata.map(({ _id, title, link }) => (
-            <li
-              className='text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300'
-              key={_id}
-            >
-              <Link
-                activeClass='active'
-                to={link}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                {title}
-              </Link>
-            </li>
-          ))}
+          <li className='text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300'>
+            <div className='flex gap-10 justify-between items-center'>
+              <a href='/'>About Me</a>
+              <a href='/blog'>My Blog</a>
+              <a href='https://github.com/HoaLeCA'>
+                <AiOutlineGithub className='text-white text-2xl mr-5' />
+              </a>
+            </div>
+          </li>
         </ul>
         <span
           onClick={() => setShowMenu(!showMenu)}
@@ -81,7 +74,7 @@ const Navbar = () => {
                     <FaLinkedinIn className='text-white fs-3' />
                   </a>
                   <a href='https://github.com/HoaLeCA'>
-                    <FaTwitter className='text-white fs-3' />
+                    <AiOutlineGithub className='text-white fs-3' />
                   </a>
                   <a href='https://github.com/HoaLeCA'>
                     <FaFacebookF className='text-white fs-3' />

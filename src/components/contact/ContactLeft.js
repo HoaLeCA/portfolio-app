@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { AiOutlineGithub } from 'react-icons/ai';
 import { contactImg } from '../../assets/index';
 
 const ContactLeft = () => {
@@ -29,7 +30,7 @@ const ContactLeft = () => {
             <FaLinkedinIn className='text-white w-10 text-3xl' />
           </a>
           <a href='https://github.com/HoaLeCA'>
-            <FaTwitter className='text-white w-10 text-3xl' />
+            <AiOutlineGithub className='text-white w-10 text-3xl' />
           </a>
           <a href='https://github.com/HoaLeCA'>
             <FaFacebookF className='text-white w-10 text-3xl' />
