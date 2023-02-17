@@ -20,7 +20,7 @@ const Navbar = () => {
           <li className='text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300'>
             <div className='flex gap-10 justify-between items-center'>
               <a href='/'>About Me</a>
-              <a href='/blog'>My Blog</a>
+              <a href='/mern-stack-blog'>My Blog</a>
               <a href='https://github.com/HoaLeCA'>
                 <AiOutlineGithub className='text-white text-2xl mr-5' />
               </a>
