@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Projects from './components/projects/Projects';
 
 import Layout from './components/Layout';
+import Contact from './components/contact/Contact';
+import Banner from './components/banner/Banner';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='/mern-stack-blog' element={<Projects />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route index element={<Banner />} />
           </Route>
         </Routes>
       </Router>

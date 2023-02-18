@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaReact } from 'react-icons/fa';
-import { SiTailwindcss, SiFigma, SiNextdotjs } from 'react-icons/si';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { AiOutlineGithub } from 'react-icons/ai';
 
 const LeftBanner = () => {
   const [text] = useTypewriter({
@@ -41,7 +41,7 @@ const LeftBanner = () => {
               <FaLinkedinIn className='text-white w-10 text-3xl' />
             </a>
             <a href='https://github.com/HoaLeCA'>
-              <FaTwitter className='text-white w-10 text-3xl' />
+              <AiOutlineGithub className='text-white w-10 text-3xl' />
             </a>
             <a href='https://github.com/HoaLeCA'>
               <FaFacebookF className='text-white w-10 text-3xl' />

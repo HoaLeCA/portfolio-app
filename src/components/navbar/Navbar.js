@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll';
-//import { Link } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { logo } from '../../assets/index';
-import { navLinksdata } from '../../constants';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,13 +16,32 @@ const Navbar = () => {
       </div>
       <div>
         <ul className='hidden mdl:inline-flex items-center gap-6 lg:gap-10'>
-          <li className='text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300'>
+          <li className='text-base font-normal text-gray-400 tracking-wide '>
             <div className='flex gap-10 justify-between items-center'>
-              <a href='/'>About Me</a>
-              <a href='/mern-stack-blog'>My Blog</a>
-              <a href='https://github.com/HoaLeCA'>
+              <Link
+                className='cursor-pointer hover:text-designColor duration-300'
+                to='/'
+              >
+                About Me
+              </Link>
+              <Link
+                className='cursor-pointer hover:text-designColor duration-300'
+                to='/mern-stack-blog'
+              >
+                My Blog
+              </Link>
+              <Link
+                className='cursor-pointer hover:text-designColor duration-300'
+                to='/contact'
+              >
+                Contact
+              </Link>
+              <Link
+                className='cursor-pointer hover:text-designColor duration-300'
+                to='https://github.com/HoaLeCA'
+              >
                 <AiOutlineGithub className='text-white text-2xl mr-5' />
-              </a>
+              </Link>
             </div>
           </li>
         </ul>
@@ -44,41 +62,48 @@ const Navbar = () => {
                   with a passion for working with data and new technologies
                 </p>
               </div>
-              <ul className='flex flex-col gap-4'>
-                {navLinksdata.map((item) => (
-                  <li
-                    key={item._id}
-                    className='text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300'
-                  >
+              <ul className='flex flex-col gap-2'>
+                <li
+                  className='text-base font-normal text-gray-400 tracking-wide
+ '
+                >
+                  <div className='flex gap-10 flex-col'>
                     <Link
-                      onClick={() => setShowMenu(false)}
-                      activeClass='active'
-                      to={item.link}
-                      spy={true}
-                      smooth={true}
-                      offset={-70}
-                      duration={500}
+                      className=' cursor-pointer hover:text-designColor duration-300'
+                      to='/'
                     >
-                      {item.title}
+                      About Me
                     </Link>
-                  </li>
-                ))}
+                    <Link
+                      className=' cursor-pointer hover:text-designColor duration-300'
+                      to='/mern-stack-blog'
+                    >
+                      My Blog
+                    </Link>
+                    <Link
+                      className=' cursor-pointer hover:text-designColor duration-300'
+                      to='/contact'
+                    >
+                      Contact
+                    </Link>
+                  </div>
+                </li>
               </ul>
               <div className='flex flex-col gap-4'>
                 <h2 className='text-base uppercase font-titleFont mb-4'>
                   CONTACT ME
                 </h2>
 
-                <div className='flex gap-4'>
-                  <a href='https://www.linkedin.com/in/levanhoa/'>
-                    <FaLinkedinIn className='text-white fs-3' />
-                  </a>
-                  <a href='https://github.com/HoaLeCA'>
-                    <AiOutlineGithub className='text-white fs-3' />
-                  </a>
-                  <a href='https://github.com/HoaLeCA'>
-                    <FaFacebookF className='text-white fs-3' />
-                  </a>
+                <div className='flex  gap-4'>
+                  <Link href='https://www.linkedin.com/in/levanhoa/'>
+                    <FaLinkedinIn className='text-white text-3xl' />
+                  </Link>
+                  <Link href='https://github.com/HoaLeCA'>
+                    <AiOutlineGithub className='text-white text-3xl' />
+                  </Link>
+                  <Link href='https://github.com/HoaLeCA'>
+                    <FaFacebookF className='text-white text-3xl' />
+                  </Link>
                 </div>
               </div>
               <span
