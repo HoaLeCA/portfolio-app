@@ -1,7 +1,8 @@
 import React from 'react';
 import Title from '../layouts/Title';
-import { projectOne, projectTwo, mern } from '../../assets/index';
+import { pic2, pic1, pic3, pic4, pic5, mern } from '../../assets/index';
 import ProjectsCard from './ProjectsCard';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   return (
@@ -16,6 +17,9 @@ const Projects = () => {
         <h1 className='text-center text-2xl font-bold'>
           A Comprehensive Guide to Building Dynamic Web Applications Using MERN
         </h1>
+        <p className='leading-10 text-lg italic text-center'>
+          Written by: Hoa Le
+        </p>
         <p className='leading-10 text-lg'>
           The world of web development is constantly evolving, and keeping up
           with the latest technologies and trends can be a challenge. There are
@@ -29,19 +33,249 @@ const Projects = () => {
           etc. The MERN stack provides a complete solution for building modern
           and dynamic web applications that meet the demands of today's users.
         </p>
+        <ProjectsCard des=' What is MERN?!' src={mern} />
+        <h2 className='text-center text-xl font-bold'>
+          What is advantage of using MERN Stack in web development?
+        </h2>
         <p className='leading-10 text-lg'>
           The main purpose of using MERN Stack is that developer can use
           JavaScript only and it is very convenient choice for developers who
           are already proficient in JavaScript, as they can use the same
-          language for both the frontend and backend of the application. Thus,
-          if someone knows JavaScript, they can easily build full web
-          application.
+          language for both the frontend and backend of the application. The
+          MERN Stack separated web application structure into two components:
+          the Frontend and the Backend. The whole database system is isolated
+          from the frontend and backend.
         </p>
-        <h1 className='text-center text-2xl font-bold'>
-          What is advantage of using MERN Stack in web development?
-        </h1>
-
-        <ProjectsCard des=' What is MERN?!' src={mern} />
+        <ProjectsCard
+          des=' MERN structure frontend - backend - database (Image copied from https://medium.com/aeologic/why-choose-mern-stack-323b4d95e4ea)'
+          src={pic1}
+        />
+        <p className='leading-10 text-lg'>
+          The MERN stack can use RESTful APIs (Representational State Transfer
+          Application Programming Interface) to communicate between the frontend
+          and backend very easy. In addition, with RESTful APIs, the web
+          developers can reuse the CRUD (Create, Read, Update, and Delete) model
+          to the new application that can save a lot of time in building a web
+          application. <br />
+          <span className='font-bold'>
+            To understand about MERN, we will deep into each component and learn
+            more about it.
+          </span>
+        </p>
+        <p className='leading-10 text-lg text-center'>
+          <span className='text-4xl'>M</span>ongoDB is the heart of the MERN
+          Stack technology.
+        </p>
+        <p className='leading-10 text-lg '>
+          MongoDB is a powerful and flexible NoSQL database that stores data in
+          a document-oriented format. Unlike traditional relational databases
+          such as Oracle SQL or MySQL, MongoDB allows developer to store and
+          retrieve data in a way that is more flexible and adaptable to changing
+          requirements.
+        </p>
+        <p className='leading-10 text-lg '>
+          The key benefits of using MongoDB instead of other database is that it
+          is scalability and reliability to store a data. MongoDB provides
+          built-in support for sharing, which allows developer to distribute
+          data across multiple servers, meaning that MongoDB can be handle more
+          data by adding more servers. In contrast, the tradition database needs
+          to add more hardware resources to handle with more data. It leads to
+          the cost that company may encounter when they use traditional
+          database.
+        </p>
+        <p className='leading-10 text-lg '>
+          MongoDB provides flexible document schemas that allows for easy
+          storage of complex, multi-level data structures, and support a wide
+          range of datatype including arrays, binary, nest objects. It is
+          perfectly tool for storing unstructured data type that increasing
+          dramatically today.
+        </p>
+        <ProjectsCard
+          des=' NoSQL vs SQL (Image copied from https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/.'
+          src={pic2}
+        />
+        <p className='font-bold'>How to connect or interact with MongoDB?</p>
+        <p className='leading-10 text-lg '>
+          There are two common approaches that developer used to use when they
+          want to interact with database, using the database native language
+          (SQL) or using Object Data Model (ODM) or Object Relational Model
+          (ORM). In MERN Stack, developer use Mongoose which is MongoDB object
+          modeling tool use to interact with MongoDB. To use Mongoose in MERN,
+          we need to install as following command:&nbsp;
+          <span className='font-bold italic'>npm install mongoose</span>
+        </p>
+        <p className='leading-10 text-lg'>
+          The command Installing Mongoose above will add all its dependencies,
+          including the MongoDB database driver that help to connect with
+          MongoDB. However, it does not install MongoDB in local machine. Should
+          a developer want to install MongoDB in the machine, they can download
+          file and install from &nbsp;
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://www.mongodb.com/try/download/community'
+          >
+            download and install
+          </Link>
+          . The developer also can use MongoDB Atlas to utilize MongoDB Cloud
+          and do not need to install it in local machine.
+        </p>
+        <ProjectsCard des='Connect to MongoDB using Mongoose.  ' src={pic3} />
+        <p className='leading-10 text-lg text-center'>
+          <span className='text-4xl'>E</span>xpress.js: Building Scalable and
+          Efficient Web Applications.
+        </p>
+        <p className='leading-10 text-lg'>
+          Express.js is powerful and flexible framework in web development that
+          help developers create backend API quickly and easily. It provides a
+          simple and flexible way to manage routes, middleware, and database
+          interactions. Here are some key advantages of using express.js
+          framework in MERN Stack:
+        </p>
+        <div className='ml-8'>
+          <p className='leading-10 text-lg'>
+            1. Routing: Express.js provides a simple API for creating routes
+            that handle HTTP requests from clients. It allows developers define
+            a different route for different type of requests that can use in
+            creating a website such as GET, POST, PUT, DELETE, etc.
+          </p>
+          <p className='leading-10 text-lg'>
+            2. Middleware: middleware is a function that support from Express.js
+            to access the ‘request’ and ‘response’, and the ‘next’ function in
+            the application request and response cycle. Middleware can be used
+            for authentication, request parsing, error handling, and many other
+            purposes in MERN stack. With support from middleware, the developers
+            can create a web application easily and flexible.
+          </p>
+          <p className='leading-10 text-lg'>
+            3. Error Handling: Express.js provides built-in error handling
+            capabilities, allowing developers to define error-handling
+            middleware to catch and handle errors in a centralized way.
+          </p>
+        </div>
+        <ProjectsCard
+          des=' Example of use async-handle-express in MERN'
+          src={pic4}
+        />
+        <p className='leading-10 text-lg'>
+          Mongoose and Express.js provides wide range of ways to interact with
+          MongoDB through model. It is very easy and flexible for developer to
+          obtain using those model. You can check it more detail at &nbsp;
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://mongoosejs.com/docs/api/model.html'
+          >
+            Mongoose models.
+          </Link>
+        </p>
+        <p className='leading-10 text-lg text-center'>
+          <span className='text-4xl'>R</span>eact: Building Dynamic and
+          Interactive User Interfaces
+        </p>
+        <p className='leading-10 text-lg'>
+          The definition about React from Wikipedia
+          <span className='italic'>
+            “React is a free and open-source front-end JavaScript library for
+            building user interfaces based on components.”
+          </span>
+          ReactJS is a powerful JavaScript library for building user interfaces.
+          It provides a fast and efficient way to build complex, interactive
+          user interfaces, and it's well suited for building modern, single-page
+          applications (SPAs) that provide a fast and responsive user
+          experience. In React, there is only one single HTML page with default
+          name is index.html. On this page, we can only see a single root that
+          will render all components from the application.
+        </p>
+        <ProjectsCard
+          des=' Single-page Application (SPA) in React '
+          src={pic5}
+        />
+        <p className='leading-10 text-lg'>
+          ReactJS uses a virtual DOM, which is a lightweight in-memory
+          representation of the actual DOM, to manage and update the user
+          interface. This allows ReactJS to update the user interface
+          efficiently,{' '}
+          <span className='font-bold'>
+            without having to reload the entire page
+          </span>
+          . This results in a fast and responsive user experience, and it makes
+          ReactJS well suited for building complex web applications that need to
+          handle real-time data updates and interactions. It is very easy to set
+          up react in the machine by using simple command line, developers could
+          use either command prompt in Windows or Command line function in code
+          editor like Visual Studio Code (highly recommend when working with
+          MERN). Command line use to create React application in VSCode is:{' '}
+          <span className='underline underline-offset-4'>
+            npx create-react-app my-app.
+          </span>{' '}
+          Please note that it is required install Node.js before to run this
+          command in the machine, and my-app is your application's name, you can
+          choose different name that related to your application's function.
+        </p>
+        <p className='leading-10 text-lg '>
+          Now you can start your program by running:{' '}
+          <span className='underline underline-offset-4'>
+            cd my-app then npm start
+          </span>{' '}
+          and you can see React will be running in your browser. If you choose
+          React is a view in your web application, you should install some
+          library that recommended for React such as React Dev Tools for
+          browser, react-router-dom to manage router in your application, etc.
+          Due to React is open-source frontend, there are millions of libraries
+          that developed by community around the world. You can utilize these
+          libraries to boost your application. You can check it on{' '}
+          <Link
+            className='underline underline-offset-8 hover:bg-violet-600'
+            to='https://www.npmjs.com/package/react'
+          >
+            npm react library
+          </Link>{' '}
+          and search the package you want to plug into your code.
+        </p>
+        <p className='leading-10 text-lg text-center'>
+          <span className='text-4xl'>N</span>odeJS: Building Scalable and
+          Efficient Server-side Applications.
+        </p>
+        <p className='leading-10 text-lg'>
+          NodeJS is a fast and efficient JavaScript runtime that allows you to
+          build server-side applications using JavaScript. It provides a simple
+          and flexible way to build scalable and efficient web applications, and
+          it's well suited for building real-time, data-intensive applications.
+        </p>
+        <p className='leading-10 text-lg'>
+          NodeJS provides a simple and efficient way to handle HTTP requests and
+          responses, and it makes it easy to build scalable and efficient
+          server-side applications. For example, you can use NodeJS to build a
+          RESTful API that serves data to your ReactJS front-end, or you can use
+          it to build a web socket server that provides real-time data updates
+          to your users.
+        </p>
+        <p className='leading-10 text-lg'>
+          NodeJS also provides a large and growing ecosystem of packages and
+          libraries that you can use to build your web application. This makes
+          it easy to find the tools and libraries you need to build your web
+          application, and it makes it easy to integrate your application with
+          other technologies and services.
+        </p>
+        <h2 className='text-center text-xl font-bold'>Conclusion</h2>
+        <p className='leading-10 text-lg'>
+          The MERN stack provides a complete solution for building modern and
+          dynamic full web applications that meet the demands of today's users.
+          The four main components of the MERN stack—MongoDB, Express.js, React,
+          and Node.js —work together to provide a robust and efficient platform
+          for web development. Alternative choices for developer to using
+          Angular instead of React (MEAN Stack), or Next.js, a popular
+          React-based framework for building server-side rendered web
+          applications, Next.js is built on top of React. With supporting from
+          large community and developers around the world and the flexible from
+          wide range of library (node package manage – npm) that makes MERN
+          becomes the most popular technology in recent years. The next step we
+          will discovery on how to build the full web application using MERN
+          Stack and its library.
+        </p>
+        <p className='leading-10 text-s italic text-right'>
+          (*)Please note that the information from this blog is adapted from
+          various resources
+        </p>
       </div>
     </section>
   );
