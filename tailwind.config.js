@@ -19,7 +19,7 @@ module.exports = {
       },
       colors: {
         bodyColor: '#444654',
-        lightText: '#c1c1c6',
+        lightText: '#f2f5ff',
         boxBg: 'linear-gradient(145deg, #1e2024, #23272b)',
         designColor: '#ff014f',
       },

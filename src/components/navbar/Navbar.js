@@ -16,7 +16,7 @@ const Navbar = () => {
       </div>
       <div>
         <ul className='hidden mdl:inline-flex items-center gap-6 lg:gap-10'>
-          <li className='text-base font-normal text-gray-400 tracking-wide '>
+          <li className='text-base font-normal text-white-400 tracking-wide '>
             <div className='flex gap-10 justify-between items-center'>
               <Link
                 className='cursor-pointer hover:text-designColor duration-300'

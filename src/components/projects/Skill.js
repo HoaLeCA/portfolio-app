@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   return (
     <>
-      <h6 className='text-designColor text-center tracking-[4px] uppercase'>
+      <h6 className='text-designColor text-center tracking-[4px] uppercase mt-3'>
         My Skills
       </h6>
       <motion.div
