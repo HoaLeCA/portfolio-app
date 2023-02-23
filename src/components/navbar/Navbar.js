@@ -12,7 +12,9 @@ const Navbar = () => {
   return (
     <div className='w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600'>
       <div>
-        <img width={50} src={logo} alt='logo' />
+        <Link className='cursor' to='/'>
+          <img width={50} src={logo} alt='logo' />
+        </Link>
       </div>
       <div>
         <ul className='hidden mdl:inline-flex items-center gap-6 lg:gap-10'>
@@ -90,8 +92,8 @@ const Navbar = () => {
                 </li>
               </ul>
               <div className='flex flex-col gap-4'>
-                <h2 className='text-base uppercase font-titleFont mb-4'>
-                  CONTACT ME
+                <h2 className='text-base uppercase font-titleFont mb-2'>
+                  Keep In Touch
                 </h2>
 
                 <div className='flex  gap-4'>
