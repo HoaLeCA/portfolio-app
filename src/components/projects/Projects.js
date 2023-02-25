@@ -335,7 +335,7 @@ const Projects = () => {
           des=' Recommended folder structure on Backend'
           src={pic6}
         />
-        <p className='text-lg font-bold mt-5'>1. Set up Frontend.</p>
+        <p className='text-lg font-bold mt-5'>2. Set up Frontend.</p>
         <p className='leading-10 text-lg'>
           To set up React for the frontend, we can either use command prompt in
           Window/iOS or command line in code editor (I am using Visual Studio
@@ -365,6 +365,18 @@ const Projects = () => {
           des=' Recommended folder structure on Frontedn'
           src={pic7}
         />
+        <p className='leading-10 text-lg'>
+          The next step we will discovery on how to apply the concept from this
+          blog to build the full web application using MERN Stack and its
+          library. Finally, we will deploy the project to the internet using
+          Heroku. All of them will be coming at{' '}
+          <span className='font-bold'>
+            Part 2 – Build the real MERN stack web application
+          </span>
+          . I hope you enjoy following along with me on this exciting journey
+          and after completing these, you also could build your own full web
+          application using MERN Stack.
+        </p>
 
         <h2 className='text-center text-xl font-bold'>Conclusion</h2>
         <p className='leading-10 text-lg'>
@@ -382,18 +394,7 @@ const Projects = () => {
           will discovery on how to build the full web application using MERN
           Stack and its library.
         </p>
-        <p className='leading-10 text-lg'>
-          The next step we will discovery on how to apply the concept from this
-          blog to build the full web application using MERN Stack and its
-          library. Finally, we will deploy the project to the internet using
-          Heroku. All of them will be coming at{' '}
-          <span className='font-bold'>
-            Part 2 – Build the real MERN stack web application
-          </span>
-          . I hope you enjoy following along with me on this exciting journey
-          and after completing these, you also could build your own full web
-          application using MERN Stack.
-        </p>
+
         <p className='leading-10 text-s italic text-right'>
           (*) Please note that the information from this blog is adapted from
           various resources.
