@@ -362,7 +362,7 @@ const Projects = () => {
           </Link>{' '}
         </p>
         <ProjectsCard
-          des=' Recommended folder structure on Frontedn'
+          des=' Recommended folder structure on Frontend'
           src={pic7}
         />
         <p className='leading-10 text-lg'>
