@@ -9,6 +9,8 @@ import pic2 from './images/Pic2.png';
 import pic3 from './images/Pic3.png';
 import pic4 from './images/Pic4.png';
 import pic5 from './images/Pic5.png';
+import pic6 from './images/Pic6.png';
+import pic7 from './images/Pic7.png';
 
 import contactImg from './images/contact/contactImg.png';
 
@@ -25,4 +27,6 @@ export {
   pic3,
   pic4,
   pic5,
+  pic6,
+  pic7,
 };

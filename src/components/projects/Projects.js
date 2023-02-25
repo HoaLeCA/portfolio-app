@@ -1,6 +1,15 @@
 import React from 'react';
 import Title from '../layouts/Title';
-import { pic2, pic1, pic3, pic4, pic5, mern } from '../../assets/index';
+import {
+  pic2,
+  pic1,
+  pic3,
+  pic4,
+  pic5,
+  pic6,
+  pic7,
+  mern,
+} from '../../assets/index';
 import ProjectsCard from './ProjectsCard';
 import { Link } from 'react-router-dom';
 
@@ -268,6 +277,95 @@ const Projects = () => {
           their web application, and it makes it easy to integrate their
           application with other technologies and services.
         </p>
+        <h2 className='text-center text-xl font-bold'>
+          Essential steps to set up MERN stack in your machine.
+        </h2>
+        <p className='text-lg font-bold'>1. Set up Backend.</p>
+        <p className='leading-10 text-lg'>
+          First, you need to install Node.js to your machine, you can download
+          and install from{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://nodejs.org/en/'
+          >
+            Node.js
+          </Link>{' '}
+          by following step by step instruction. The latest version when I wrote
+          this blog is 19.7.0 and LTS version is 18.14.2. I highly recommend
+          installing the LTS version as it is quite reliable and have supported
+          from community.
+        </p>
+        <p className='leading-10 text-lg'>
+          Next, for the database, you can either download and install{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://www.mongodb.com/try/download/community'
+          >
+            MongoDB Community Server
+          </Link>{' '}
+          to your machine or use{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://www.mongodb.com/try'
+          >
+            MongoDB Atlas
+          </Link>{' '}
+          , the MongoDB Cloud database. it is free to register and convenience
+          to use. If you want to manage your database with GUI, you can also
+          download and install{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://www.mongodb.com/try/download/shell'
+          >
+            MongoDB Compass
+          </Link>{' '}
+          . It is very friendly UI and easy to mange your database.
+        </p>
+        <p className='leading-10 text-lg'>
+          There are several ways to structure folders in your machine, you can
+          choose the one that you feel more comfortable. However, as far as I
+          understand from the industry, the optimize way is to create separately
+          folder with different functions such as config, models, middleware,
+          routes, controller, utils, etc. The backend/server folder is root
+          folder for backend. This structure helps the developer easy to manage
+          and control the codes. I will provide more details on how to set up
+          these folders and the main function of those on part 2 of the blog.{' '}
+        </p>
+        <ProjectsCard
+          des=' Recommended folder structure on Backend'
+          src={pic6}
+        />
+        <p className='text-lg font-bold mt-5'>1. Set up Frontend.</p>
+        <p className='leading-10 text-lg'>
+          To set up React for the frontend, we can either use command prompt in
+          Window/iOS or command line in code editor (I am using Visual Studio
+          Code). On the command line we type{' '}
+          <span className='underline'> npm create-react-app frontend</span>,
+          frontend is name of folder stores all the codes of the frontend. After
+          the command is finish, your browser should run the React default page
+          when you run the command <span className='underline'>npm start</span>.
+        </p>
+        <p className='leading-10 text-lg'>
+          There are many ways to structure the folders of the frontend as same
+          as the backend. However, I tried to structure the way that help me
+          easy to manage the code by its functions. When we go further in
+          building the MERN application on part 2. I will go more details on the
+          libraries and npm packages (node package manager) that required on
+          building the MERN application. MERN stack has a huge support from
+          community by provided many useful npm package. You can research more
+          on{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://www.npmjs.com/'
+          >
+            npm website
+          </Link>{' '}
+        </p>
+        <ProjectsCard
+          des=' Recommended folder structure on Frontedn'
+          src={pic7}
+        />
+
         <h2 className='text-center text-xl font-bold'>Conclusion</h2>
         <p className='leading-10 text-lg'>
           The MERN stack provides a complete solution for building modern and

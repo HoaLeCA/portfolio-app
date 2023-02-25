@@ -17,7 +17,7 @@ const ContactLeft = () => {
           Full Stack Developer
         </p>
         <p className='text-base text-gray-400 tracking-wide'>
-          Enjoy learning and working with a new teachnology.
+          Enjoy learning and working with a new technology.
         </p>
         <p className='text-base text-gray-400 flex items-center gap-2'>
           Email: <span className='text-lightText'>harrycodele@gmail.com</span>
