@@ -30,7 +30,14 @@ const Projects = () => {
           Part 1: A Comprehensive information about MERN stack
         </h1>
         <p className='leading-10 text-lg italic text-center'>
-          Written by: Hoa Le
+          Written by:{' '}
+          <Link
+            className=' hover:text-red-500'
+            to='https://github.com/HoaLeCA'
+            target={'_blank'}
+          >
+            Hoa Le
+          </Link>
         </p>
         <p className='leading-10 text-lg'>
           The world of web development is constantly evolving, and keeping up
@@ -130,6 +137,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://www.mongodb.com/try/download/community'
+            target={'_blank'}
           >
             download and install
           </Link>
@@ -187,6 +195,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://mongoosejs.com/docs/api/model.html'
+            target={'_blank'}
           >
             Mongoose models.
           </Link>
@@ -246,6 +255,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-8 hover:bg-violet-600'
             to='https://www.npmjs.com/package/react'
+            target={'_blank'}
           >
             npm react library
           </Link>{' '}
@@ -287,6 +297,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://nodejs.org/en/'
+            target={'_blank'}
           >
             Node.js
           </Link>{' '}
@@ -300,6 +311,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://www.mongodb.com/try/download/community'
+            target={'_blank'}
           >
             MongoDB Community Server
           </Link>{' '}
@@ -307,6 +319,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://www.mongodb.com/try'
+            target={'_blank'}
           >
             MongoDB Atlas
           </Link>{' '}
@@ -316,6 +329,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://www.mongodb.com/try/download/shell'
+            target={'_blank'}
           >
             MongoDB Compass
           </Link>{' '}
@@ -357,6 +371,7 @@ const Projects = () => {
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://www.npmjs.com/'
+            target={'_blank'}
           >
             npm website
           </Link>{' '}
