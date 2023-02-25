@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route path='/mern-stack-blog' element={<Projects />} />
+            <Route path='/mern-stack-blog-part-1' element={<Projects />} />
             <Route path='/contact' element={<Contact />} />
             <Route index element={<Banner />} />
           </Route>
