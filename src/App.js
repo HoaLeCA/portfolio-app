@@ -5,6 +5,7 @@ import Projects from './components/projects/Projects';
 import Layout from './components/Layout';
 import Contact from './components/contact/Contact';
 import Banner from './components/banner/Banner';
+import BlogList from './components/projects/BlogList';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='/mern-stack-blog-part-1' element={<Projects />} />
+            <Route path='/my-blogs' element={<BlogList />} />
             <Route path='/contact' element={<Contact />} />
             <Route index element={<Banner />} />
           </Route>

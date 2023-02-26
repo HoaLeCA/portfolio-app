@@ -28,9 +28,9 @@ const Navbar = () => {
               </Link>
               <Link
                 className='cursor-pointer hover:text-designColor duration-300'
-                to='/mern-stack-blog-part-1'
+                to='/my-blogs'
               >
-                My Blog
+                My Blogs
               </Link>
               <Link
                 className='cursor-pointer hover:text-designColor duration-300'

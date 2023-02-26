@@ -3,9 +3,9 @@ import Title from '../layouts/Title';
 import {
   pic2,
   pic1,
-  pic3,
-  pic4,
-  pic5,
+  // pic3,
+  // pic4,
+  // pic5,
   pic6,
   pic7,
   mern,
@@ -30,7 +30,8 @@ const Projects = () => {
           Building full application using MERN Stack in web development
         </h1>
         <h1 className='text-center text-xl font-bold'>
-          Part 1: A Comprehensive information about MERN stack
+          Part 1: A Comprehensive information about MERN stack in Web
+          Development.
         </h1>
         <p className='leading-10 text-lg italic text-center'>
           Written by:{' '}
