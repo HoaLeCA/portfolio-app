@@ -132,6 +132,7 @@ const Projects = () => {
           we need to install it as following command:&nbsp;
           <span className='font-bold italic'>npm install mongoose</span>
         </p>
+        <CodeSnipLine code='npm install mongoose' />
         <p className='leading-10 text-lg'>
           The command Installing Mongoose above will add all its dependencies,
           including the MongoDB database driver that help to connect with
@@ -224,10 +225,7 @@ const Projects = () => {
           code='<div id="root"></div>'
           des='Single-page Application (SPA) in React'
         />
-        {/* <ProjectsCard
-          des=' Single-page Application (SPA) in React '
-          src={pic5}
-        /> */}
+
         <p className='leading-10 text-lg mt-5'>
           ReactJS uses a virtual DOM, which is a lightweight in-memory
           representation of the actual DOM, to manage and update the user
@@ -248,15 +246,16 @@ const Projects = () => {
           to run this command, and my-app is your application's name, you can
           choose different name that related to your application's function.
         </p>
+        <CodeSnipLine code='npx create-react-app my-app' />
         <p className='leading-10 text-lg '>
           Now you can start your program by running:{' '}
           <span className='font-bold'>cd my-app then npm start</span> and you
-          can see React will be running in your browser. If you choose React is
-          a view in your web application, you should install some library that
-          recommended for React such as React Dev Tools for browser,
-          react-router-dom to manage router in your application, etc. Due to
-          React is open-source frontend, there are millions of libraries that
-          developed by community around the world. You can utilize these
+          can see React Application will be running in your browser. If you
+          choose React is a view in your web application, you should install
+          some library that recommended for React such as React Dev Tools for
+          browser, react-router-dom to manage router in your application, etc.
+          Due to React is open-source frontend, there are millions of libraries
+          that developed by community around the world. You can utilize these
           libraries to boost your application. You can check it on{' '}
           <Link
             className='underline underline-offset-8 hover:bg-violet-600'
@@ -292,6 +291,11 @@ const Projects = () => {
           makes it easy to find the tools and libraries developer need to build
           their web application, and it makes it easy to integrate their
           application with other technologies and services.
+        </p>
+        <p className='leading-10 text-lg'>
+          To have Node.js run in your machine, you can download from
+          https://nodejs.org/ and install. You can find more information on the
+          essential steps to set up MERN below.
         </p>
         <h2 className='text-center text-xl font-bold'>
           Essential steps to set up MERN stack in your machine.
