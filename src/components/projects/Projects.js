@@ -12,6 +12,9 @@ import {
 } from '../../assets/index';
 import ProjectsCard from './ProjectsCard';
 import { Link } from 'react-router-dom';
+import CodeSnip from './CodeSnip';
+import CodeSnip2 from './CodeSnip2';
+import CodeSnipLine from './CodeSnipLine';
 
 const Projects = () => {
   return (
@@ -147,7 +150,7 @@ const Projects = () => {
           mongoose. It seems very easy compared to the way connect to database
           using predecessor database.
         </p>
-        <ProjectsCard des='Connect to MongoDB using Mongoose.  ' src={pic3} />
+        <CodeSnip des='Setup Connect To MongoDB Using Mongoose' />
         <p className='leading-10 mt-5 text-xl text-center'>
           <span className='text-5xl '>E</span>xpress.js: Building Scalable and
           Efficient Web Applications.
@@ -184,10 +187,8 @@ const Projects = () => {
             centralized way.
           </p>
         </div>
-        <ProjectsCard
-          des=' Example of use async-handle-express in MERN'
-          src={pic4}
-        />
+        <CodeSnip2 des=' Example of use async-handle-express in MERN' />
+
         <p className='leading-10 text-lg mt-5'>
           Mongoose and Express.js provides wide range of ways to interact with
           MongoDB through model. It is very easy and flexible for developer to
@@ -218,10 +219,14 @@ const Projects = () => {
           default name is index.html. On this page, we can only see a single
           root that will render all components from the application.
         </p>
-        <ProjectsCard
+        <CodeSnipLine
+          code='<div id="root"></div>'
+          des='Single-page Application (SPA) in React'
+        />
+        {/* <ProjectsCard
           des=' Single-page Application (SPA) in React '
           src={pic5}
-        />
+        /> */}
         <p className='leading-10 text-lg mt-5'>
           ReactJS uses a virtual DOM, which is a lightweight in-memory
           representation of the actual DOM, to manage and update the user
