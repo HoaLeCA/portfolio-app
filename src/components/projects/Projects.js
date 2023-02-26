@@ -404,15 +404,18 @@ const Projects = () => {
           dynamic full web applications that meet the demands of today's users.
           The four main components of the MERN stack—MongoDB, Express.js, React,
           and Node.js —work together to provide a robust and efficient platform
-          for web development. Alternative choices for developer to using
-          Angular instead of React (MEAN Stack), or Next.js, a popular
-          React-based framework for building server-side rendered web
-          applications, Next.js is built on top of React. With supporting from
-          large community and developers around the world and the flexible from
-          wide range of library (node package manage – npm) that makes MERN
-          becomes the most popular technology in recent years. The next step we
-          will discovery on how to build the full web application using MERN
-          Stack and its library.
+          for web development. Alternative choices for developer is to using
+          Angular instead of React (MEAN Stack) on a view, or using Next.js (a
+          popular React-based framework for building server-side rendered web
+          applications) on top of React to increase SEO for the web application.
+          With supporting from large community and developers around the world
+          and the flexible from wide range of library (node package manage –
+          npm) that makes MERN becomes the most popular technology in recent
+          years. The next step we will discovery on how to build the full web
+          application using MERN Stack and its library.
+        </p>
+        <p className='leading-10 text-lg'>
+          Thank you for reading my blog. I am happy to have your feedback!
         </p>
 
         <p className='leading-10 text-s italic text-right'>
