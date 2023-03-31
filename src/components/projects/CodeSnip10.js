@@ -2,18 +2,26 @@ import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const CodeSnip8 = (props) => {
+const CodeSnip10 = (props) => {
   const [copy, setCopy] = useState(false);
   const codeString = `
-  const express = require("express")
-  const router = express.Router()
-  const {registerUser, loginUser} = 
-        require("../controller/userController")
-  const {protect} = require("../middleware/authMiddleware")
-  router.post("/", registerUser) // use to registe new user
-  router.post("/login", loginUser) // use to login
-  module.exports = router
-    
+// set up note router  
+const express = require('express');
+const router = express.Router();
+const {
+  getNotes,
+  setNotes,
+  updateNotes,
+  deleteNotes,
+} = require('../controller/noteController');
+const { protect } = require('../middleware/authMiddleware');
+router.route('/').get(protect, getNotes).post(protect, setNotes);
+router.route('/:id').put(protect, updateNotes).delete(protect, deleteNotes);
+module.exports = router;
+
+// connect noteController to server.js
+
+app.use('/api/notes', require('./routers/noteRoutes'));
   `;
   const des = props.des;
   return (
@@ -73,4 +81,4 @@ const CodeSnip8 = (props) => {
   );
 };
 
-export default CodeSnip8;
+export default CodeSnip10;

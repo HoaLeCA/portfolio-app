@@ -9,6 +9,9 @@ import CodeSnip5 from './CodeSnip5';
 import CodeSnip6 from './CodeSnip6';
 import CodeSnip7 from './CodeSnip7';
 import CodeSnip8 from './CodeSnip8';
+import CodeSnip9 from './CodeSnip9';
+import CodeSnip10 from './CodeSnip10';
+import CodeSnip11 from './CodeSnip11';
 import CodeSnipLine from './CodeSnipLine';
 
 const ProjectsPart2 = () => {
@@ -282,16 +285,40 @@ const ProjectsPart2 = () => {
             folder, create authRoute.js on routers folder and add the code
             below.
           </p>
-          <CodeSnip8 desc='authRoute.js sample' />
+          <CodeSnip8 des='authRoute.js sample' />
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
             After we setup router for userController at userRoute.js in routers
-            folder, we will connect the routes to server.js by adding{' '}
-            <span className='underline'>
-              app.use('/api/users', require('./routers/userRoutes'))
-            </span>
-            ; At this point, we can use Postman to test the function of
-            userController. Once you pass all the tests, it is a time we can
-            move to the next step to create noteController.js
+            folder, we will connect the routes to server.js by adding the code
+            below to server.js
+            <CodeSnip9 des='Connect userController.js to Server.js' /> At this
+            point, we can use Postman to test the function of userController.
+            Once you pass all the tests, it is a time we can move to the next
+            step to create noteController.js
+          </p>
+          <p className='leading-10 text-lg mb-3 '>
+            &rarr; noteController.js same idea with userController.js,
+            noteController.js will handle all CRUD of the note, user can create
+            new note, update, delete, and retrieve note from database.
+          </p>
+          <p className='leading-10 text-lg mb-3 '>
+            <span className='text-2xl'>&#9888;</span> Please reference to my
+            code in GitHub for simple code at{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://github.com/HoaLeCA/Note-Taking/tree/main/backend/controller'
+              target={'_blank'}
+            >
+              noteController link.{'  '}
+            </Link>
+            Once finished all functions we need in noteController.js, we will
+            move to set up routes for it. Go to routers folder and create new
+            file named noteRoutes.js. On sever.js add the code to connect
+            noteRoute.js to server
+          </p>
+          <CodeSnip10 des='noteRoute.js sample code' />
+          <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
+            The we can use Postman to test the function of noteController. Once
+            we pass all the tests, it is a time we complete a simple backend.
           </p>
         </div>
 

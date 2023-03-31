@@ -2,18 +2,10 @@ import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const CodeSnip8 = (props) => {
+const CodeSnip9 = (props) => {
   const [copy, setCopy] = useState(false);
   const codeString = `
-  const express = require("express")
-  const router = express.Router()
-  const {registerUser, loginUser} = 
-        require("../controller/userController")
-  const {protect} = require("../middleware/authMiddleware")
-  router.post("/", registerUser) // use to registe new user
-  router.post("/login", loginUser) // use to login
-  module.exports = router
-    
+  app.use('/api/users', require('./routers/userRoutes'));
   `;
   const des = props.des;
   return (
@@ -73,4 +65,4 @@ const CodeSnip8 = (props) => {
   );
 };
 
-export default CodeSnip8;
+export default CodeSnip9;
