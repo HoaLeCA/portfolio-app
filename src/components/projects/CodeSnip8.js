@@ -7,7 +7,8 @@ const CodeSnip8 = (props) => {
   const codeString = `
   const express = require("express")
   const router = express.Router()
-  const {registerUser, loginUser} = require("../controller/userController")
+  const {registerUser, loginUser} = 
+        require("../controller/userController")
   const {protect} = require("../middleware/authMiddleware")
   router.post("/", registerUser) // use to registe new user
   router.post("/login", loginUser) // use to login

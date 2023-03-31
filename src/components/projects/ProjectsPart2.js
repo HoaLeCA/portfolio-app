@@ -180,15 +180,16 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mt-3'>
             &#x26A0; You will need the password to fill on the &lt;password&gt;
             on the link above. It is easily to generate when you check security
-            tab and Database Access. Once you got all information needed, you
-            can save it on .env file (.env file is environment variable where
-            you will store all sensitive information to keep your data safety
-            when you push your code to internet like GitHub).
+            tab and Database Access when you login into MongoDB Atlas account.
+            Once you got all information needed, you can save it on .env file
+            (.env file is environment variable where you will store all
+            sensitive information to keep your data safety when you push your
+            code to internet like GitHub).
           </p>
           <p className='leading-10 text-lg'>
             Once you had the link to that need to use to connect with MongoDB.
             We can work on the code at Config folder to connect application with
-            database.&#x26A0; process.env.MONGO_URI is how we connect with your
+            database.&#x26A0; process.env.MONGO_URL is how we connect with your
             .env file, please make sure you set up .env file and have MONGO_URL
             in it.
           </p>
@@ -278,9 +279,20 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mb-3 ml-8'>
             + Set up route for userController: routes are used to define the
             endpoints that clients can access on the server-side. In the route
-            folder, create authRoute.js and input the code below.
+            folder, create authRoute.js on routers folder and add the code
+            below.
           </p>
           <CodeSnip8 desc='authRoute.js sample' />
+          <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
+            After we setup router for userController at userRoute.js in routers
+            folder, we will connect the routes to server.js by adding{' '}
+            <span className='underline'>
+              app.use('/api/users', require('./routers/userRoutes'))
+            </span>
+            ; At this point, we can use Postman to test the function of
+            userController. Once you pass all the tests, it is a time we can
+            move to the next step to create noteController.js
+          </p>
         </div>
 
         <p className='font-bold text-center text-xl mt-5'>
