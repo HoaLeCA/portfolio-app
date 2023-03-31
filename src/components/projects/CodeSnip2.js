@@ -6,8 +6,7 @@ const CodeSnip2 = (props) => {
   const [copy, setCopy] = useState(false);
   const codeString = `
   // Using asyncHandle to verify admin
-  
-  const admin = asyncHandle(async (req, res, next) => {
+    const admin = asyncHandle(async (req, res, next) => {
     const { email } = req.user;
     const adminUser = await User.findOne({ email });
     if (adminUser.role === 'admin') {
@@ -20,7 +19,7 @@ const CodeSnip2 = (props) => {
   `;
   const des = props.des;
   return (
-    <div className='w-2/3 p-3 items-center xl:px-12 h-auto xl:py-10 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>
+    <div className='w-3/4 p-3 items-center xl:px-12 h-auto xl:py-10 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>
       <div className='w-full h-[70%] overflow-hidden rounded-md items-center flex-auto'>
         <div className='flex justify-between text-white text-xs items-center overflow-hidden'>
           <p className='text-sm mb-2'>Example code</p>

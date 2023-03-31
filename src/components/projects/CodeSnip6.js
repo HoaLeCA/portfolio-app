@@ -2,25 +2,43 @@ import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const CodeSnip = (props) => {
+const CodeSnip6 = (props) => {
   const [copy, setCopy] = useState(false);
   const codeString = `
-  const mongoose = require('mongoose');
-  const connectDB = async () => {
+const jwt = require('jsonwebtoken');
+const asyncHandler = require('express-async-handler');
+const User = require('../model/userModel');
+const protect = asyncHandler(async (req, res, next) => {
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith('Bearer')
+  ) {
     try {
-      mongoose.set('strictQuery', false);
-      const conn = await mongoose.connect(process.env.MONGO_URL);
-      console.log("MongoDB connected")
-      } catch (error) {
-      console.log(error);
-      process.exit(1);
-    }
-  };
-    module.exports = connectDB;
+  // get token from header
+  token = req.headers.authorization.split(' ')[1];
+  // verify token
+  const decoded = jwt.verify(token, process.env.JWT_SECRET); 
+  // JWT_SECRET store in .env file
+  // get user from token
+  req.user = await User.findById(decoded.id).select('-password');
+  next();
+  }  catch (error) {
+  console.log(error);
+  res.status(401);
+  throw new Error('Not Authorized');
+  }
+  }
+  if (!token) {
+  res.status(401);
+  throw new Error('Not Authorized, not token');
+  }   
+});
+module.exports = { protect };
   `;
   const des = props.des;
   return (
-    <div className='w-3/4 p-3 items-center xl:px-5 h-auto xl:py-3 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>
+    <div className='w-3/4 p-3 items-center xl:px-12 h-auto xl:py-10 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>
       <div className='w-full h-[70%] overflow-hidden rounded-md items-center flex-auto'>
         <div className='flex justify-between text-white text-xs items-center overflow-hidden'>
           <p className='text-sm mb-2'>Example code</p>
@@ -50,7 +68,7 @@ const CodeSnip = (props) => {
           )}
         </div>
         <SyntaxHighlighter
-          customStyle={{ padding: '5px' }}
+          customStyle={{ padding: '25px' }}
           wrapLongLines={true}
           language='javascript'
           style={atomOneDark}
@@ -69,4 +87,4 @@ const CodeSnip = (props) => {
   );
 };
 
-export default CodeSnip;
+export default CodeSnip6;

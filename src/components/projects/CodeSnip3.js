@@ -2,25 +2,30 @@ import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const CodeSnip = (props) => {
+const CodeSnip3 = (props) => {
   const [copy, setCopy] = useState(false);
   const codeString = `
-  const mongoose = require('mongoose');
-  const connectDB = async () => {
-    try {
-      mongoose.set('strictQuery', false);
-      const conn = await mongoose.connect(process.env.MONGO_URL);
-      console.log("MongoDB connected")
-      } catch (error) {
-      console.log(error);
-      process.exit(1);
-    }
-  };
-    module.exports = connectDB;
+const path = require('path');
+const express = require('express');
+const dotenv = require('dotenv').config();
+const { errorHandler } = require('./middleware/errorMiddleware');
+const colors = require('colors');
+const connectDB = require('./config/db');
+const port = process.env.PORT || 3000; // PORT store in .env file
+connectDB();
+const app = express();
+// add function to use body
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+// middelware
+app.use(errorHandler);
+// display information when server connect to MongoDB.
+app.listen(port, () => {
+  console.log('Server is running');
   `;
   const des = props.des;
   return (
-    <div className='w-3/4 p-3 items-center xl:px-5 h-auto xl:py-3 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>
+    <div className='w-3/4 p-3 items-center xl:px-12 h-auto xl:py-10 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>
       <div className='w-full h-[70%] overflow-hidden rounded-md items-center flex-auto'>
         <div className='flex justify-between text-white text-xs items-center overflow-hidden'>
           <p className='text-sm mb-2'>Example code</p>
@@ -50,7 +55,7 @@ const CodeSnip = (props) => {
           )}
         </div>
         <SyntaxHighlighter
-          customStyle={{ padding: '5px' }}
+          customStyle={{ padding: '25px' }}
           wrapLongLines={true}
           language='javascript'
           style={atomOneDark}
@@ -69,4 +74,4 @@ const CodeSnip = (props) => {
   );
 };
 
-export default CodeSnip;
+export default CodeSnip3;

@@ -1,19 +1,14 @@
 import React from 'react';
 import Title from '../layouts/Title';
-import {
-  pic2,
-  pic1,
-  // pic3,
-  // pic4,
-  // pic5,
-  pic6,
-  pic7,
-  mern,
-} from '../../assets/index';
+import { pic10, pic11, pic9, pic8, pic6, pic7, mern } from '../../assets/index';
 import ProjectsCard from './ProjectsCard';
 import { Link } from 'react-router-dom';
-import CodeSnip from './CodeSnip';
-import CodeSnip2 from './CodeSnip2';
+import CodeSnip3 from './CodeSnip3';
+import CodeSnip4 from './CodeSnip4';
+import CodeSnip5 from './CodeSnip5';
+import CodeSnip6 from './CodeSnip6';
+import CodeSnip7 from './CodeSnip7';
+import CodeSnip8 from './CodeSnip8';
 import CodeSnipLine from './CodeSnipLine';
 
 const ProjectsPart2 = () => {
@@ -27,11 +22,10 @@ const ProjectsPart2 = () => {
       </div>
       <div className='grid grid-cols-1 md:grid-cols-1 gap-6 xl:gap-14 mx-9'>
         <h1 className='text-center text-2xl font-bold'>
-          Building full application using MERN Stack in web development
+          Building Full Web Application Using MERN Stack
         </h1>
-        <h1 className='text-center text-xl font-bold'>
-          Part 1: A Comprehensive information about MERN stack in Web
-          Development.
+        <h1 className='text-center text-lg font-bold'>
+          Part 2: Build Simple Note Taking Web Application Using MERN Stack
         </h1>
         <p className='leading-10 text-lg italic text-center'>
           Written by:{' '}
@@ -44,82 +38,251 @@ const ProjectsPart2 = () => {
           </Link>
         </p>
         <p className='leading-10 text-lg'>
-          The world of web development is constantly evolving, and keeping up
-          with the latest technologies and trends can be a challenge. There are
-          many technologies that web developer chooses to build the desires
-          website such Spring using Java, ASP.NET core, Django, MEAN, etc.
-          However, one of the most popular and versatile technology stacks for
-          web development today is the MERN stack, which stands for MongoDB,
-          ExpressJS, ReactJS, and NodeJS. The MERN stack is used to develop the
-          web application in many big tech companies around a world such as
-          Facebook, Airbnb, Netflix, Uber, Walmart, Amazon, GoDaddy, PayPal,
-          etc. This technology provides a complete solution for building modern
-          and dynamic web applications that meet the demands of any users.
+          In the previous blog, I have provided a lot of theory information
+          about MERN Stack technology, and how to divide each part on MERN. I
+          think it is hard to image and connect each element without put the
+          theory into practical. In this second part, I'll be walking you
+          through my experience of building a full-stack web application using
+          MongoDB, Express, React, and Node.js. The project is a simple Note
+          Taking web application where people can create new users, authenticate
+          user, and add the note. This simple project will showcase how to
+          integrate these technologies to create a seamless user experience. In
+          the rest of this post, we'll cover how to create backend, frontend and
+          deploy this project to Heroku. So, let's dive in the project and start
+          building the application from scratch!
         </p>
+        <h2 className='text-left mt-5 text-xl font-bold'>A. Backend</h2>
         <ProjectsCard
           des=' What is MERN? (image copied from internet source)'
           src={mern}
         />
-        <h2 className='text-center mt-5 text-xl font-bold'>
-          What is advantage of using MERN Stack in web development?
-        </h2>
-        <p className='leading-10 text-lg'>
-          The main purpose of using MERN Stack is that developer can use
-          JavaScript only and it is very convenient choice for developers who
-          are already proficient in JavaScript, as they can use the same
-          language for both the frontend and backend of the application. The
-          MERN Stack separated web application structure into two components:
-          the Frontend and the Backend. The whole database system is isolated
-          from the frontend and backend.
+
+        <p className='leading-10 text-lg mb-0'>
+          Backend plays a crucial role in the MERN stack by managing the
+          application's data, providing APIs for the frontend to consume, and
+          ensuring the application's security, reliability, and performance. As
+          I explained in the fist blog, in MERN Stack, we are using Node.js as
+          your server-side platform, Express.js as your web application
+          framework, and MongoDB as your database. I assumed that we all have
+          installed Node.js in the machine and created MongoDB Atlas’s account
+          (a cloud MongoDB). Should you miss this part, please check my first
+          blog (link) for more information about it. There are many codes editor
+          that you can prefer, but I am using Visual Studio Code on this demon.
         </p>
-        <ProjectsCard
-          des=' MERN structure frontend - backend - database (Image copied from https://medium.com/aeologic/why-choose-mern-stack-323b4d95e4ea)'
-          src={pic1}
-        />
+
+        <div className='ml-8'>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> - Step 1</span>: Create folder name
+            Note_Taking in anywhere in your machine, in this folder we will
+            create two separate folders named frontend and backend.
+          </p>
+          <p className='leading-10 text-lg mb-5'>
+            <span className='font-bold'>- Step 2</span>: - On the command line
+            on VS Code type: <span className='underline'>cd backend</span> to go
+            to backend folder, when we were on this folder, we will install all
+            the libraries that we need to build this application.
+          </p>
+          <CodeSnipLine code='npm install bcrypt colors dotenv express express-async-handler jsonwebtoken mongoose concurrently nodemon' />
+        </div>
         <p className='leading-10 text-lg mt-5'>
-          The MERN stack can use RESTful APIs (Representational State Transfer
-          Application Programming Interface) to communicate between the frontend
-          and backend very easy. In addition, with RESTful APIs, the web
-          developers can reuse the CRUD (Create, Read, Update, and Delete) model
-          to the new application that can save a lot of time in building a web
-          application. <br />
           <span className='font-bold'>
-            To understand about MERN, we will deep into each component and learn
-            more about it.
+            To organize folder structure in the backend, I suggest we will
+            follow the structure that I mentioned on the first blog:
           </span>
         </p>
-        <p className='leading-10 text-xl text-center'>
-          <span className='text-4xl'>M</span>ongoDB is the heart of the MERN
-          Stack technology.
-        </p>
+        <ProjectsCard des=' Backend folder structure recommended' src={pic8} />
+
+        <div className='ml-8'>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> &#8594; </span>Config folder: store the
+            configuration connect to MongoDB.
+          </p>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> &#8594; </span> Controller folder:
+            store all the controllers that provides a central location for
+            handling the business logic and ensuring that requests and responses
+            are processed correctly.
+          </p>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> &#8594; </span>Middleware folder: store
+            all the middleware that function or a set of functions that execute
+            between the client request and the server response such as Error
+            Handling, Authentication, etc.
+          </p>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> &#8594; </span> Model folder: store all
+            models of the application, it is quite similar with model we knew in
+            Java Servlet and JSP on last semester.
+          </p>
+          <p className='leading-10 text-lg '>
+            <span className='font-bold'> &#8594; </span> Routers: store all
+            routes in the application, route is essentially a middleware
+            function that listens for specific HTTP requests and routes them to
+            the appropriate controller function that handles that request.
+          </p>
+          <p className='leading-10 text-lg '>
+            <span className='font-bold'> &#8594; </span>server.js: all
+            configuration in the server side
+          </p>
+        </div>
+
         <p className='leading-10 text-lg '>
-          MongoDB is a powerful and flexible NoSQL database that stores data in
-          a document-oriented format. Unlike traditional relational databases
-          such as Oracle SQL or MySQL, MongoDB allows developer to store and
-          retrieve data in a way that is more flexible and adaptable to changing
-          requirements.
+          (*) Please note that I have pushed all codes into my GitHub account{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://github.com/HoaLeCA/Note-Taking'
+            target={'_blank'}
+          >
+            code link
+          </Link>
+          , feel free to fork or clone to test this application. You can also
+          check the link that I deployed the application in Heroku ( ). That’s
+          cool, right? If you read to here, I suppose you have a general
+          knowledge about structuring folder in MERN. The next step we will go
+          detail how to set up and create small application named Note-taking.
+          Let's work on each component.
         </p>
-        <p className='leading-10 text-lg '>
-          The key benefits of using MongoDB instead of other database is that it
-          is scalability and reliability to store a data. MongoDB provides
-          built-in support for sharing, which allows developer to distribute
-          data across multiple servers, meaning that MongoDB can be handle more
-          data by adding more servers. In contrast, the tradition database needs
-          to add more hardware resources to handle with more data. It could lead
-          to the cost that company may encounter when they use traditional
-          database.
-        </p>
-        <p className='leading-10 text-lg '>
-          MongoDB provides flexible document schemas that allows for easy
-          storage of complex, multi-level data structures, and support a wide
-          range of datatype including arrays, binary, nest objects. It is
-          perfectly tool for storing unstructured data type that increasing
-          dramatically today.
-        </p>
-        <ProjectsCard
-          des=' NoSQL vs SQL (Image copied from https://www.geeksforgeeks.org/sql-vs-nosql-which-one-is-better-to-use/.'
-          src={pic2}
-        />
+        <div className='ml-8'>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'>
+              {' '}
+              &#x2713; 1. Setup MongoDB cloud account:{' '}
+            </span>
+            Go to:{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://account.mongodb.com/account/login'
+              target={'_blank'}
+            >
+              https://account.mongodb.com/account/login
+            </Link>{' '}
+            and set up your account. It is straight forward on how to set up.
+            Once you have an account, you can use MongoDB Compass to check your
+            data. Should you have problem when you connect with MongoDB Compass,
+            you can check their documentation for more information.
+          </p>
+          <p className='leading-10 text-lg mb-3'>
+            <span className='font-bold'>
+              {' '}
+              &#x2713; 2. Config folder - connects an application to MongoDB.:{' '}
+            </span>
+            When you login into your account in MongoDB Atlas, you will see the
+            Database tab (1) after completing all the steps. The you click on
+            Connect (2) to get the link use to connect to your server - check
+            the steps below (make sure you create file server.js in the root
+            folder of the application to config all information that need to
+            connect the application to Server and Database, check my folder
+            structure if you missed it).
+          </p>
+          <ProjectsCard des=' 1- Steps to connect with MongoDB' src={pic9} />
+          <ProjectsCard des=' 2- Steps to connect with MongoDB' src={pic10} />
+          <ProjectsCard des=' 3- Steps to connect with MongoDB' src={pic11} />
+          <p className='leading-10 text-lg mt-3'>
+            &#x26A0; You will need the password to fill on the &lt;password&gt;
+            on the link above. It is easily to generate when you check security
+            tab and Database Access. Once you got all information needed, you
+            can save it on .env file (.env file is environment variable where
+            you will store all sensitive information to keep your data safety
+            when you push your code to internet like GitHub).
+          </p>
+          <p className='leading-10 text-lg'>
+            Once you had the link to that need to use to connect with MongoDB.
+            We can work on the code at Config folder to connect application with
+            database.&#x26A0; process.env.MONGO_URI is how we connect with your
+            .env file, please make sure you set up .env file and have MONGO_URL
+            in it.
+          </p>
+          <p className='leading-10 text-lg mb-3'>
+            <span className='font-bold'> &#x2713; 3. server.js: </span>
+            this file will configure all server information in the application.
+            Please make sure you install all models and npm package to avoid
+            errors. To run and test a backend server, we can change a script
+            from package.json in the Backend. Once you completed it, you can run
+            the command <span className='underline'>npm run start</span> in the
+            VS Code Terminal to start backend server. Should you have errors
+            when start running command, you can check error information and fix
+            it.
+          </p>
+          <CodeSnip3 des='Setup Server.js' />
+          <CodeSnip4 des='Modify Script On Package.json in Backend' />
+          <p className='leading-10 text-lg mt-3'>
+            <span className='font-bold'> &#x2713; 4. Model Folder: </span> the
+            models on this application is quite simple with two models which are
+            user model and note model where user model will link with note model
+            in the database.
+          </p>
+          <p className='leading-10 text-lg mb-3 '>
+            - User Model: this model will store all user information into
+            MongoDB. Below is a sample code for User model, you can try to
+            create the same with Note Model.
+          </p>
+          <CodeSnip5 des='User Model' />
+          <p className='leading-10 text-lg mt-3'>
+            <span className='font-bold'> &#x2713; 5. Middleware:</span> as I
+            said on the explanation, middleware provides easy way to developer
+            to keep the code organized and maintainable by separating concerns
+            and promoting reusability. In this application, I used two common
+            middelwares:
+          </p>
+          <p className='leading-10 text-lg mb-3 '>
+            - authMiddleware: use to authenticate user when user login.
+          </p>
+          <CodeSnip6 des='authMiddelware Simple Code' />
+          <p className='leading-10 text-lg mb-3 '>
+            - errorMiddleware: use to catch and handle any unhandled exceptions
+            that may occur in subsequent middleware or route handlers.
+          </p>
+          <CodeSnip7 des='errorMiddelware Simple Code' />
+          <p className='leading-10 text-lg mt-3'>
+            <span className='font-bold'>
+              {' '}
+              &#x2713; 6. Controller and Routes:{' '}
+            </span>{' '}
+            In this application, we only need two controllers, userController.js
+            handles all CRUD of users and noteController.js handles all CRUD of
+            notes.
+          </p>
+          <p className='leading-10 text-lg mb-3 '>
+            &rarr; userController.js is where we can create new user, delete
+            user, edit user information, retrieve user information and user
+            login. There are many other models related to how make the
+            application more secure, in this simple application, I only use
+            Jsonwebtoken and hash function to encrypt password.
+          </p>
+          <p className='leading-10 text-lg mb-3 ml-8'>
+            + registerUser: the program will get input from user which including
+            name, email, and password to create new user. The password will be
+            hashing and encrypting before save those into MongoDB. The
+            registerUser also have some basic login such as verify user exist in
+            the database, if user already stored in database, it will send
+            message to user.
+          </p>
+          <p className='leading-10 text-lg mb-3 ml-8'>
+            + loginUser: the program will get information about email and
+            password from user, then it will check a data stored in MongoDB to
+            verify email and password are correctly. The error message will send
+            to user when fail to verify email and password.
+          </p>
+
+          <p className='leading-10 text-lg '>
+            <span className='text-2xl'>&#9888;</span> Please reference to my
+            code in GitHub for simple code at{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://github.com/HoaLeCA/Note-Taking/tree/main/backend/controller'
+              target={'_blank'}
+            >
+              userController link
+            </Link>
+          </p>
+          <p className='leading-10 text-lg mb-3 ml-8'>
+            + Set up route for userController: routes are used to define the
+            endpoints that clients can access on the server-side. In the route
+            folder, create authRoute.js and input the code below.
+          </p>
+          <CodeSnip8 desc='authRoute.js sample' />
+        </div>
+
         <p className='font-bold text-center text-xl mt-5'>
           How to connect or interact with MongoDB?
         </p>
@@ -152,7 +315,7 @@ const ProjectsPart2 = () => {
           mongoose. It seems very easy compared to the way connect to database
           using predecessor database.
         </p>
-        <CodeSnip des='Setup Connect To MongoDB Using Mongoose' />
+
         <p className='leading-10 mt-5 text-xl text-center'>
           <span className='text-5xl '>E</span>xpress.js: Building Scalable and
           Efficient Web Applications.
@@ -189,7 +352,6 @@ const ProjectsPart2 = () => {
             centralized way.
           </p>
         </div>
-        <CodeSnip2 des=' Example of use async-handle-express in MERN' />
 
         <p className='leading-10 text-lg mt-5'>
           Mongoose and Express.js provides wide range of ways to interact with

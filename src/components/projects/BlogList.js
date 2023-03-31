@@ -33,7 +33,8 @@ const BlogList = () => {
         <div className='flex flex-col justify-center rounded-xl p-3 items-center text-center hover:border-red-900 border-transparent border-4'>
           <Link to='/mern-stack-blog-part-2'>
             <p className='text-lg text-left mb-5'>
-              Part 2: Building Full MERN Stack Web Application - Taking Note
+              Part 2: Building Full MERN Stack Web Application - Simple Note
+              Taking Web Application
             </p>
             <div className='w-full rounded-lg flex-col justify-center  items-center flex-auto py-3 '>
               <img
