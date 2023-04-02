@@ -140,10 +140,10 @@ const ProjectsPart2 = () => {
           </Link>
           , feel free to fork or clone to test this application. You can also
           check the link that I deployed the application in Heroku ( ). That’s
-          cool, right? If you read to here, I suppose you have a general
-          knowledge about structuring folder in MERN. The next step we will go
-          detail how to set up and create small application named Note-taking.
-          Let's work on each component.
+          cool, right? If you read to here, I hope you get some idea on
+          structuring folder in MERN. The next step we will go details how to
+          set up and create small application named Note-taking. Let's work on
+          each component.
         </p>
         <div className='ml-8'>
           <p className='leading-10 text-lg'>
@@ -289,11 +289,9 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
             After we setup router for userController at userRoute.js in routers
             folder, we will connect the routes to server.js by adding the code
-            below to server.js
-            <CodeSnip9 des='Connect userController.js to Server.js' /> At this
-            point, we can use Postman to test the function of userController.
-            Once you pass all the tests, it is a time we can move to the next
-            step to create noteController.js
+            above to server.js. At this point, we can use Postman to test the
+            function of userController. Once you pass all the tests, it is a
+            time we can move to the next step to create noteController.js
           </p>
           <p className='leading-10 text-lg mb-3 '>
             &rarr; noteController.js same idea with userController.js,
@@ -301,14 +299,14 @@ const ProjectsPart2 = () => {
             new note, update, delete, and retrieve note from database.
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            <span className='text-2xl'>&#9888;</span> Please reference to my
-            code in GitHub for simple code at{' '}
+            <span className='text-2xl'>&#9888;</span> Please check my code in
+            GitHub for simple code of noteController.js at{' '}
             <Link
               className='underline underline-offset-4 hover:bg-violet-600'
               to='https://github.com/HoaLeCA/Note-Taking/tree/main/backend/controller'
               target={'_blank'}
             >
-              noteController link.{'  '}
+              link.{'  '}
             </Link>
             Once finished all functions we need in noteController.js, we will
             move to set up routes for it. Go to routers folder and create new
@@ -319,9 +317,109 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
             The we can use Postman to test the function of noteController. Once
             we pass all the tests, it is a time we complete a simple backend.
+            &#128079; &#128079; &#128079; &#128079; WELL DONE!
           </p>
         </div>
+        <h2 className='text-left mt-5 text-xl font-bold'>B. Frontend</h2>
+        <p className='leading-10 text-lg mb-0'>
+          Frontend provides an interactive and user-friendly interface for the
+          web application. The frontend is responsible for displaying data and
+          content to the user and allowing them to interact with the application
+          through various user interface components such as forms, buttons, and
+          menus. The instructions below provide step to initialize React in the
+          frontend on the application.
+        </p>
+        <div className='ml-8'>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> &#8594; </span>Open your terminal or
+            command prompt and navigate to the frontend directory cd frontend.
+          </p>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> &#8594; </span>Run the following
+            command to initialize a new React project. Please Note the dot at
+            the end of the command. This tells create-react-app to use the
+            current directory (frontend) as the project directory, instead of
+            creating a new subdirectory.
+            <CodeSnipLine
+              des='Initialize React on frontend'
+              code='npx create-react-app .'
+            />
+          </p>
+          <p className='leading-10 text-lg'>
+            <span className='font-bold'> &#8594; </span>Wait for the
+            installation process to complete. Once it's done, you can start the
+            development server by running: npm start.
+          </p>
+          <p className='leading-10 text-lg mb-3'>
+            <span className='font-bold'> &#8594; </span> We also need install
+            some npm package required to build on this application. We may need
+            a few more, but we will find out it when we needed. Once we run a
+            command to install all the frameworks and npm package, we can start
+            building the frontend of the application. For more information about
+            the purpose and how to use those packages and frameworks, you can
+            check at{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://www.npmjs.com/'
+              target={'_blank'}
+            >
+              https://www.npmjs.com/.
+            </Link>
+          </p>
+          <CodeSnipLine
+            des='Install frameworks and npm packages'
+            code='npm i axios  redux  react-router-dom  react-toastify yup formik'
+          />
+          <p className='leading-10 text-lg py-3'>
+            <span className='font-bold'> &#8594; </span> Recap frontend
+            structure.
+          </p>
 
+          <ProjectsCard
+            des=' Recommended folder structure on frontend'
+            src={pic7}
+          />
+          <p className='leading-10 text-lg mt-5 ml-8'>
+            + app folder will store the store.js file that create and configure
+            the Redux store, which is a JavaScript object that holds the
+            application state. In this application, I am using Redux to manage
+            states in React, Redux help us to provides a reliable and scalable
+            solution for managing state in a web application, making it easier
+            to maintain, debug, and scale the application over time.
+          </p>
+          <p className='leading-10 text-lg mt-3 ml-8'>
+            + components folder: store all components in this application, as
+            you are all familiar with component in React. It can be used to
+            build complex UIs by composing them together. They can also be
+            reused across different parts of the application, making it easier
+            to maintain and scale the codebase.
+          </p>
+          <p className='leading-10 text-lg mt-3 ml-8'>
+            + pages folder: store all pages in this application, a page
+            component is to display specific content and functionality related
+            to that view. In this application, we will have some simple pages
+            such as a login page, a home page, a register page.
+          </p>
+          <p className='leading-10 text-lg mt-3 ml-8'>
+            + index.css in the customize CSS for this application, I also using
+            Bootstrap 5 on top of the customize CSS, you can also use
+            Tailwind.css.
+          </p>
+          <p className='leading-10 text-lg mt-3 ml-8'>
+            + If you did some research about React, you may know that there are
+            some downsides of using form in React. Therefore, there are many
+            frameworks from Open Source came on handy to handle its. In this
+            application, I am using Formik and Yup for form and form validation.
+            Should you want to go deeper on this topic, you can check at{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://formik.org/docs/guides/validation'
+              target={'_blank'}
+            >
+              link.
+            </Link>
+          </p>
+        </div>
         <p className='font-bold text-center text-xl mt-5'>
           How to connect or interact with MongoDB?
         </p>

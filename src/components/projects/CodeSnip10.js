@@ -19,8 +19,7 @@ router.route('/').get(protect, getNotes).post(protect, setNotes);
 router.route('/:id').put(protect, updateNotes).delete(protect, deleteNotes);
 module.exports = router;
 
-// connect noteController to server.js
-
+// connect noteController to server.js -> add this code to server.js
 app.use('/api/notes', require('./routers/noteRoutes'));
   `;
   const des = props.des;

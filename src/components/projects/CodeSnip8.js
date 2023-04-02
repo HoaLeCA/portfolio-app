@@ -5,6 +5,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 const CodeSnip8 = (props) => {
   const [copy, setCopy] = useState(false);
   const codeString = `
+  // set up user route
   const express = require("express")
   const router = express.Router()
   const {registerUser, loginUser} = 
@@ -13,6 +14,9 @@ const CodeSnip8 = (props) => {
   router.post("/", registerUser) // use to registe new user
   router.post("/login", loginUser) // use to login
   module.exports = router
+
+  // connect userController.js to server -> add this code to server.js
+  app.use('/api/users', require('./routers/userRoutes'));
     
   `;
   const des = props.des;
