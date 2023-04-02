@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const CodeSnip11 = (props) => {
+const CodeSnip13 = (props) => {
   const [copy, setCopy] = useState(false);
   const codeString = `
-import axios from 'axios';
-const API_URL = '/api/users/';
-// Register user
-const register = async (userData) => {
-  const response = await axios.post(API_URL, userData);
-  if (response.data) {
-    localStorage.setItem('user', JSON.stringify(response.data));
-  }
-  return response.data;
-};
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from '../features/auth/authSlice';
+import noteReducer from '../features/notes/noteSlice';
 
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    notes: noteReducer,
+  },
+});
+
+  
   `;
   const des = props.des;
   return (
@@ -75,4 +76,4 @@ const register = async (userData) => {
   );
 };
 
-export default CodeSnip11;
+export default CodeSnip13;

@@ -15,6 +15,9 @@ import pic8 from './images/Pic8.png';
 import pic9 from './images/Pic9.png';
 import pic10 from './images/Pic10.png';
 import pic11 from './images/Pic11.png';
+import pic12 from './images/Pic12.png';
+import pic13 from './images/Pic13.png';
+import pic14 from './images/Pic14.png';
 import mern1 from './images/mern.png';
 
 import contactImg from './images/contact/contactImg.png';
@@ -38,5 +41,8 @@ export {
   pic9,
   pic10,
   pic11,
+  pic12,
+  pic13,
+  pic14,
   mern1,
 };

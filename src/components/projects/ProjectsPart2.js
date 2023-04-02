@@ -1,6 +1,17 @@
 import React from 'react';
 import Title from '../layouts/Title';
-import { pic10, pic11, pic9, pic8, pic6, pic7, mern } from '../../assets/index';
+import {
+  pic10,
+  pic11,
+  pic12,
+  pic13,
+  pic14,
+  pic9,
+  pic8,
+  pic6,
+  pic7,
+  mern,
+} from '../../assets/index';
 import ProjectsCard from './ProjectsCard';
 import { Link } from 'react-router-dom';
 import CodeSnip3 from './CodeSnip3';
@@ -12,6 +23,8 @@ import CodeSnip8 from './CodeSnip8';
 import CodeSnip9 from './CodeSnip9';
 import CodeSnip10 from './CodeSnip10';
 import CodeSnip11 from './CodeSnip11';
+import CodeSnip12 from './CodeSnip12';
+import CodeSnip13 from './CodeSnip13';
 import CodeSnipLine from './CodeSnipLine';
 
 const ProjectsPart2 = () => {
@@ -419,287 +432,156 @@ const ProjectsPart2 = () => {
               link.
             </Link>
           </p>
+          <p className='leading-10 text-lg py-3'>
+            <span className='font-bold'> &#x2713; 1. Build component: </span> as
+            I explained earlier, a component is a reusable piece of code that
+            can be used to create a specific part of a UI. There are 6
+            components are using in this application, a header and footer are
+            used as header and footer of the application. Layout is where we
+            organize the layout of the application, CustomInput is used as input
+            to get information from use, the Noteform and NoteIteam have the
+            same function with CustomInput. There are many ways you can make for
+            the components, it depends on how you want to organize your
+            application. Component make the code more efficiency and
+            well-organized. Please check my GitHub{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://github.com/HoaLeCA/Note-Taking/tree/main/frontend/src/components'
+              target={'_blank'}
+            >
+              link {'  '}
+            </Link>
+            to see the codes for components folder.
+          </p>
+          <ProjectsCard des=' component folders' src={pic12} />
+          <p className='leading-10 text-lg py-3'>
+            <span className='font-bold'> &#x2713; 2. Pages folder: </span> To
+            simplicity, there only three pages on this application. The login
+            page provide login function to user login into their account and
+            take note. The register page will place a new user can create a new
+            account to login into the application. The dashboard page is place
+            display all the notes from users, user can do CRUD for the note they
+            created. In the limitation of this application, I only create delete
+            note function, another functions I will push into GitHub link for
+            your reference.
+          </p>
+          <p className='leading-10 text-lg mb-3 '>
+            &rarr; register.js and login.js: using Formik and Yup make form
+            validation is easier than normal form in React. As you can see
+            below, when user does not input all the fields required, the program
+            will prompt the error to inform user. Please check my GitHub link to
+            see the code on this part{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://github.com/HoaLeCA/Note-Taking/tree/main/frontend/src/pages'
+              target={'_blank'}
+            >
+              link.
+            </Link>
+          </p>
+          <ProjectsCard
+            des=' login validation using formik and yup'
+            src={pic13}
+          />
+          <p className='leading-10 text-lg py-3 '>
+            &rarr; dashboard.js is where displays all the notes that user
+            created. To get all the notes from each user, the program will
+            retrieve all the notes store in MongoDB, only the notes belong to
+            logged in user can be displayed.
+          </p>
+          <CodeSnip9 des='Dashboard.jsx code sample' />
+          <p className='leading-10 text-lg py-3'>
+            <span className='font-bold'>
+              {' '}
+              &#x2713; 3. state management – redux:{' '}
+            </span>{' '}
+            to use Redux in the application, we will create folder name features
+            where we have two main folders, auth folder and notes folder in it.
+            In the auth folder, we will create two JavaScript files,
+            authService.js and authSlice.js. An authService.js is a module or
+            function that encapsulates a set of related operations that interact
+            with an external API or data source. Therefore, we will have all the
+            endpoint that connect with the backend using axios. Please note that
+            Axios is a popular JavaScript library that is used for making HTTP
+            requests from a web browser or Node.js to a server. In React, Axios
+            is often used for making asynchronous HTTP requests to a server and
+            fetching data from APIs. Please check a snipe code below use to
+            register new user or check this{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://github.com/HoaLeCA/Note-Taking/tree/main/frontend/src/features/auth'
+              target={'_blank'}
+            >
+              link
+            </Link>{' '}
+            to get all the code for authService.js.
+          </p>
+          <CodeSnip11 des='Create new user in authService.js' />
+          <p className='leading-10 text-lg py-3'>
+            The authSlice.js on another hand typically includes code for
+            defining actions and reducers related to authentication. Actions are
+            objects that describe a change in state, while reducers are
+            functions that handle those actions and update the state
+            accordingly.
+          </p>
+          <CodeSnip12 des='Create new user on authSlice.js sample code' />
+          <p className='leading-10 text-lg py-3'>
+            store.js is a file that contains the Redux store for a React
+            application. The store is the central location for managing the
+            state of a Redux application, and it holds the current state tree of
+            the application.
+          </p>
+          <CodeSnip13 des='store.js sample code' />
+          <p className='leading-10 text-lg mt-3'>
+            <span className='text-2xl'>&#9888;</span> The noteService.js and
+            noteSlice.js also have the same approach with authService.js and
+            authSlice.js. You can try it by yourself and check your code with my
+            code at{' '}
+            <Link
+              className='underline underline-offset-4 hover:bg-violet-600'
+              to='https://github.com/HoaLeCA/Note-Taking/tree/main/frontend/src/features/notes'
+              target={'_blank'}
+            >
+              link
+            </Link>{' '}
+          </p>
+          <p className='leading-10 text-lg mt-3'>
+            <span className='text-2xl'>&#9888;</span> Once you finished all the
+            code for auth and notes folder, you can use Redux DevTools to check
+            the auth and notes in the browser.
+          </p>
+          <ProjectsCard
+            des=' Using Redux DevTools to debug and manage states'
+            src={pic14}
+          />
+
+          <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
+            If you go to this step, we completed the simple MERN stack web
+            application &#128079; &#128079; &#128079; &#128079; WELL DONE!. The
+            next step we will test all the function of the application to
+            eliminate the bugs.
+          </p>
         </div>
-        <p className='font-bold text-center text-xl mt-5'>
-          How to connect or interact with MongoDB?
+        <h2 className='text-left  text-xl font-bold'>C. Testing and Deploy</h2>
+        <p className='leading-10 text-lg mb-3'>
+          <span className='font-bold'> &#x2713; 1. Testing: </span> before we
+          deploy the application into the internet, we should test all the
+          functions of the application. In MERN stack, there are many frameworks
+          support for testing the application such as Jest, Enzyme, Mocha, Chai,
+          and Sinon. However, in this application, I only use simple one which
+          is end-to-end testing tests the entire application from the user's
+          perspective, simulating real user interactions. We will go through
+          every functions and check to make sure it minimums bugs.
         </p>
-        <p className='leading-10 text-lg '>
-          There are two common approaches that developer used to use when they
-          want to interact with database, using the database native language
-          (SQL) or using Object Data Model (ODM) or Object Relational Model
-          (ORM). In MERN Stack, developer use Mongoose which is MongoDB object
-          modeling tool use to interact with MongoDB. To use Mongoose in MERN,
-          we need to install it as following command:&nbsp;
-          <span className='font-bold italic'>npm install mongoose</span>
-        </p>
-        <CodeSnipLine code='npm install mongoose' />
-        <p className='leading-10 text-lg'>
-          The command Installing Mongoose above will add all its dependencies,
-          including the MongoDB database driver that help to connect with
-          MongoDB. The developer can choose either using local MongoDB or
-          MongoDB Cloud. To use MongoDB in local machine, the developer can
-          download and install it from MongoDB website &nbsp;
-          <Link
-            className='underline underline-offset-4 hover:bg-violet-600'
-            to='https://www.mongodb.com/try/download/community'
-            target={'_blank'}
-          >
-            download and install
-          </Link>
-          . The developer also can use MongoDB Atlas, the Cloud MongoDB so they
-          do not need to install MongoDB in their local machine. The following
-          snip code provides information on how to connect to MongDB using
-          mongoose. It seems very easy compared to the way connect to database
-          using predecessor database.
-        </p>
-
-        <p className='leading-10 mt-5 text-xl text-center'>
-          <span className='text-5xl '>E</span>xpress.js: Building Scalable and
-          Efficient Web Applications.
-        </p>
-        <p className='leading-10 text-lg'>
-          Express.js is powerful and flexible framework in web development that
-          help developers create backend API quickly and easily. It provides a
-          simple and flexible way to manage routes, middleware, and database
-          interactions. Here are some key advantages of using Express.js
-          framework in MERN Stack:
-        </p>
-        <div className='ml-8'>
-          <p className='leading-10 text-lg'>
-            <span className='font-bold'>1. Routing</span>: Express.js provides a
-            simple API for creating routes that handle HTTP requests from
-            clients. It allows developers define a different routes for
-            different type of requests that can use in creating a website such
-            as GET, POST, PUT, DELETE, etc. As a result, the developers can
-            manage routes efficiently and flexibly.
-          </p>
-          <p className='leading-10 text-lg mt-5'>
-            <span className='font-bold'>2. Middleware</span>: middleware is a
-            function that support from Express.js to access the ‘request’ and
-            ‘response’, and the ‘next’ function in the application request and
-            response cycle. Middleware can be used for authentication, request
-            parsing, error handling, and many other purposes in MERN stack. With
-            support from middleware, the developers can create a web application
-            easily and flexible.
-          </p>
-          <p className='leading-10 text-lg mt-5'>
-            <span className='font-bold'>3. Error Handling</span>: Express.js
-            provides built-in error handling capabilities, allowing developers
-            to define error-handling middleware to catch and handle errors in a
-            centralized way.
-          </p>
-        </div>
-
-        <p className='leading-10 text-lg mt-5'>
-          Mongoose and Express.js provides wide range of ways to interact with
-          MongoDB through model. It is very easy and flexible for developer to
-          obtain using those model. You can check it more detail at &nbsp;
-          <Link
-            className='underline underline-offset-4 hover:bg-violet-600'
-            to='https://mongoosejs.com/docs/api/model.html'
-            target={'_blank'}
-          >
-            Mongoose models.
-          </Link>
-        </p>
-        <p className='leading-10 text-xl text-center'>
-          <span className='text-4xl'>R</span>eact: Building Dynamic and
-          Interactive User Interfaces
-        </p>
-        <p className='leading-10 text-lg'>
-          The definition about React from Wikipedia
-          <span className='italic'>
-            “React is a free and open-source front-end JavaScript library for
-            building user interfaces based on components.”&nbsp;
-          </span>
-          ReactJS is a powerful JavaScript library for building user interfaces.
-          It provides a fast and efficient way to build complex, interactive
-          user interfaces, and it's well suited for building modern. A
-          single-page applications (SPAs) that provides a fast and responsive
-          user experience. In React, there is only one single HTML page with
-          default name is index.html. On this page, we can only see a single
-          root that will render all components from the application.
-        </p>
-        <CodeSnipLine
-          code='<div id="root"></div>'
-          des='Single-page Application (SPA) in React'
-        />
-
-        <p className='leading-10 text-lg mt-5'>
-          ReactJS uses a virtual DOM, which is a lightweight in-memory
-          representation of the actual DOM, to manage and update the user
-          interface. This allows ReactJS to update the user interface
-          efficiently,{' '}
-          <span className='font-bold'>
-            without having to reload the entire page
-          </span>
-          . This results in a fast and responsive user experience, and it makes
-          ReactJS well suited for building complex web applications that need to
-          handle real-time data updates and interactions. It is very easy to set
-          up react in the machine by using simple command line, developers could
-          use either command prompt in Windows/iOS or Command line function in
-          code editor like Visual Studio Code (highly recommend when working
-          with MERN). Command line use to create React application in VSCode is{' '}
-          <span className=' font-bold'>npx create-react-app my-app.</span>{' '}
-          Please note that it is required install Node.js in the machine before
-          to run this command, and my-app is your application's name, you can
-          choose different name that related to your application's function.
-        </p>
-        <CodeSnipLine code='npx create-react-app my-app' />
-        <p className='leading-10 text-lg '>
-          Now you can start your program by running:{' '}
-          <span className='font-bold'>cd my-app then npm start</span> and you
-          can see React Application will be running in your browser. If you
-          choose React is a view in your web application, you should install
-          some library that recommended for React such as React Dev Tools for
-          browser, react-router-dom to manage router in your application, etc.
-          Due to React is open-source frontend, there are millions of libraries
-          that developed by community around the world. You can utilize these
-          libraries to boost your application. You can check it on{' '}
-          <Link
-            className='underline underline-offset-8 hover:bg-violet-600'
-            to='https://www.npmjs.com/package/react'
-            target={'_blank'}
-          >
-            npm react library
-          </Link>{' '}
-          and search the package you want to plug into your code.
-        </p>
-        <p className='leading-10 text-xl text-center'>
-          <span className='text-4xl'>N</span>odeJS: Building Scalable and
-          Efficient Server-side Applications.
-        </p>
-        <p className='leading-10 text-lg'>
-          NodeJS is a fast and efficient JavaScript runtime that allows
-          developers to build server-side applications using JavaScript. It
-          provides a simple and flexible way to build scalable and efficient web
-          applications, and it's well suited for building real-time,
-          data-intensive applications.
-        </p>
-        <p className='leading-10 text-lg'>
-          NodeJS provides a simple and efficient way to handle HTTP requests and
-          responses, and it makes it easy to build scalable and efficient
-          server-side applications. For example, developers can use NodeJS to
-          build a RESTful API that serves data to their ReactJS front-end, or
-          developers can use it to build a web socket server that provides
-          real-time data updates to their users.
-        </p>
-        <p className='leading-10 text-lg'>
-          NodeJS also provides a large and growing ecosystem of packages and
-          libraries that developers can use to build their web application. This
-          makes it easy to find the tools and libraries developer need to build
-          their web application, and it makes it easy to integrate their
-          application with other technologies and services.
-        </p>
-        <p className='leading-10 text-lg'>
-          To have Node.js run in your machine, you can download from
-          https://nodejs.org/ and install. You can find more information on the
-          essential steps to set up MERN below.
-        </p>
-        <h2 className='text-center text-xl font-bold'>
-          Essential steps to set up MERN stack in your machine.
-        </h2>
-        <p className='text-lg font-bold'>1. Set up Backend.</p>
-        <p className='leading-10 text-lg'>
-          First, you need to install Node.js to your machine, you can download
-          and install from{' '}
-          <Link
-            className='underline underline-offset-4 hover:bg-violet-600'
-            to='https://nodejs.org/en/'
-            target={'_blank'}
-          >
-            Node.js
-          </Link>{' '}
-          by following step by step instruction. The latest version when I wrote
-          this blog is 19.7.0 and LTS version is 18.14.2. I highly recommend
-          installing the LTS version as it is quite reliable and have supported
-          from community.
-        </p>
-        <p className='leading-10 text-lg'>
-          Next, for the database, you can either download and install{' '}
-          <Link
-            className='underline underline-offset-4 hover:bg-violet-600'
-            to='https://www.mongodb.com/try/download/community'
-            target={'_blank'}
-          >
-            MongoDB Community Server
-          </Link>{' '}
-          to your machine or use{' '}
-          <Link
-            className='underline underline-offset-4 hover:bg-violet-600'
-            to='https://www.mongodb.com/try'
-            target={'_blank'}
-          >
-            MongoDB Atlas
-          </Link>{' '}
-          , the MongoDB Cloud database. it is free to register and convenience
-          to use. If you want to manage your database with GUI, you can also
-          download and install{' '}
-          <Link
-            className='underline underline-offset-4 hover:bg-violet-600'
-            to='https://www.mongodb.com/try/download/shell'
-            target={'_blank'}
-          >
-            MongoDB Compass
-          </Link>{' '}
-          . It is very friendly UI and easy to mange your database.
-        </p>
-        <p className='leading-10 text-lg'>
-          There are several ways to structure folders in your machine, you can
-          choose the one that you feel more comfortable. However, as far as I
-          understand from the industry, the optimize way is to create separately
-          folder with different functions such as config, models, middleware,
-          routes, controller, utils, etc. The backend/server folder is root
-          folder for backend. This structure helps the developer easy to manage
-          and control the codes. I will provide more details on how to set up
-          these folders and the main function of those on part 2 of the blog.{' '}
-        </p>
-        <ProjectsCard
-          des=' Recommended folder structure on Backend'
-          src={pic6}
-        />
-        <p className='text-lg font-bold mt-5'>2. Set up Frontend.</p>
-        <p className='leading-10 text-lg'>
-          To set up React for the frontend, we can either use command prompt in
-          Window/iOS or command line in code editor (I am using Visual Studio
-          Code). On the command line we type{' '}
-          <span className='underline'> npm create-react-app frontend</span>,
-          frontend is name of folder stores all the codes of the frontend. After
-          the command is finish, your browser should run the React default page
-          when you run the command <span className='underline'>npm start</span>.
-        </p>
-        <p className='leading-10 text-lg'>
-          There are many ways to structure the folders of the frontend as same
-          as the backend. However, I tried to structure the way that help me
-          easy to manage the code by its functions. When we go further in
-          building the MERN application on part 2. I will go more details on the
-          libraries and npm packages (node package manager) that required on
-          building the MERN application. MERN stack has a huge support from
-          community by provided many useful npm package. You can research more
-          on{' '}
-          <Link
-            className='underline underline-offset-4 hover:bg-violet-600'
-            to='https://www.npmjs.com/'
-            target={'_blank'}
-          >
-            npm website
-          </Link>{' '}
-        </p>
-        <ProjectsCard
-          des=' Recommended folder structure on Frontend'
-          src={pic7}
-        />
-        <p className='leading-10 text-lg'>
-          The next step we will discovery on how to apply the concept from this
-          blog to build the full web application using MERN Stack and its
-          library. Finally, we will deploy the project to the internet using
-          Heroku. All of them will be coming at{' '}
-          <span className='font-bold'>
-            Part 2 – Build the real MERN stack web application
-          </span>
-          . I hope you enjoy following along with me on this exciting journey
-          and after completing these, you also could build your own full web
-          application using MERN Stack.
+        <p className='leading-10 text-lg mb-3'>
+          <span className='font-bold'> &#x2713; 2. Deploy: </span> before we
+          deploy the application into the internet, we should test all the
+          functions of the application. In MERN stack, there are many frameworks
+          support for testing the application such as Jest, Enzyme, Mocha, Chai,
+          and Sinon. However, in this application, I only use simple one which
+          is end-to-end testing tests the entire application from the user's
+          perspective, simulating real user interactions. We will go through
+          every functions and check to make sure it minimums bugs.
         </p>
 
         <h2 className='text-center text-xl font-bold'>Conclusion</h2>
