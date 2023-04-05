@@ -4,8 +4,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip12 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-  import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+  const codeString = `import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
   import authService from './authService';
   
   // get user from localstorage
@@ -66,9 +65,7 @@ const CodeSnip12 = (props) => {
     },
   });
   export const { reset } = authSlice.actions;
-  export default authSlice.reducer;
-  
-  `;
+  export default authSlice.reducer;`;
   const des = props.des;
   return (
     <div

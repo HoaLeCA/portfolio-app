@@ -4,8 +4,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip9 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-import { useEffect } from 'react';
+  const codeString = `import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Noteform from '../components/Noteform';
@@ -55,9 +54,7 @@ function Dashboard() {
     </>
   );
 }
-export default Dashboard;
-
-  `;
+export default Dashboard;`;
   const des = props.des;
   return (
     <div

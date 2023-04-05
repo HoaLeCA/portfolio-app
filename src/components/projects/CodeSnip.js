@@ -4,8 +4,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-  const mongoose = require('mongoose');
+  const codeString = `const mongoose = require('mongoose');
   const connectDB = async () => {
     try {
       mongoose.set('strictQuery', false);
@@ -16,8 +15,7 @@ const CodeSnip = (props) => {
       process.exit(1);
     }
   };
-    module.exports = connectDB;
-  `;
+    module.exports = connectDB;`;
   const des = props.des;
   return (
     <div className='w-3/4 p-3 items-center xl:px-5 h-auto xl:py-3 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>

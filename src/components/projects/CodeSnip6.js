@@ -4,8 +4,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip6 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-const jwt = require('jsonwebtoken');
+  const codeString = `const jwt = require('jsonwebtoken');
 const asyncHandler = require('express-async-handler');
 const User = require('../model/userModel');
 const protect = asyncHandler(async (req, res, next) => {
@@ -34,8 +33,7 @@ const protect = asyncHandler(async (req, res, next) => {
   throw new Error('Not Authorized, not token');
   }   
 });
-module.exports = { protect };
-  `;
+module.exports = { protect };`;
   const des = props.des;
   return (
     <div className='w-3/4 p-3 items-center xl:px-12 h-auto xl:py-10 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>

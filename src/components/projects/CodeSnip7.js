@@ -4,8 +4,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip7 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-const errorHandler = (err, req, res, next) => {
+  const codeString = `const errorHandler = (err, req, res, next) => {
   const statusCode = res.statusCode ? res.statusCode : 500;
     res.status(statusCode);
     res.json({
@@ -14,8 +13,7 @@ const errorHandler = (err, req, res, next) => {
     });
       // JWT_SECRET store in .env file
     };
-module.exports = {errorHandler,};  
-  `;
+module.exports = {errorHandler,};`;
   const des = props.des;
   return (
     <div className='w-3/4 p-3 items-center xl:px-12 h-auto xl:py-10 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>

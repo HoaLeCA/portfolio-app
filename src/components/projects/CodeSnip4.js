@@ -4,14 +4,12 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip4 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-  "scripts": {
+  const codeString = `"scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \\"npm run server\\" \\"npm run client\\" ",
-    },
-  `;
+    },`;
   const des = props.des;
   return (
     <div className='w-3/4 p-3 items-center xl:px-12 h-auto xl:py-10 mx-auto rounded-md shadow-shadowOne flex flex-col bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-gray-900 hover:gray-900 transition-colors duration-1000'>

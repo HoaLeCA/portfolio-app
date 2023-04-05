@@ -4,8 +4,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip11 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-import axios from 'axios';
+  const codeString = `import axios from 'axios';
 const API_URL = '/api/users/';
 // Register user
 const register = async (userData) => {
@@ -14,9 +13,7 @@ const register = async (userData) => {
     localStorage.setItem('user', JSON.stringify(response.data));
   }
   return response.data;
-};
-
-  `;
+};`;
   const des = props.des;
   return (
     <div

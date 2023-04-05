@@ -6,6 +6,7 @@ import {
   pic12,
   pic13,
   pic14,
+  pic15,
   pic9,
   pic8,
   pic6,
@@ -25,6 +26,7 @@ import CodeSnip10 from './CodeSnip10';
 import CodeSnip11 from './CodeSnip11';
 import CodeSnip12 from './CodeSnip12';
 import CodeSnip13 from './CodeSnip13';
+import CodeSnip14 from './CodeSnip14';
 import CodeSnipLine from './CodeSnipLine';
 
 const ProjectsPart2 = () => {
@@ -36,7 +38,7 @@ const ProjectsPart2 = () => {
       <div className='flex justify-center items-center text-center'>
         <Title title='HAPPY TO RECEIVE YOUR FEEDBACK' des='My Blogs' />
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-1 gap-6 xl:gap-14 mx-9'>
+      <div className='grid grid-cols-1 md:grid-cols-1 gap-3 xl:gap-14 mx-9'>
         <h1 className='text-center text-2xl font-bold'>
           Building Full Web Application Using MERN Stack
         </h1>
@@ -563,7 +565,7 @@ const ProjectsPart2 = () => {
           </p>
         </div>
         <h2 className='text-left  text-xl font-bold'>C. Testing and Deploy</h2>
-        <p className='leading-10 text-lg mb-3'>
+        <p className='leading-10 text-lg '>
           <span className='font-bold'> &#x2713; 1. Testing: </span> before we
           deploy the application into the internet, we should test all the
           functions of the application. In MERN stack, there are many frameworks
@@ -573,16 +575,76 @@ const ProjectsPart2 = () => {
           perspective, simulating real user interactions. We will go through
           every functions and check to make sure it minimums bugs.
         </p>
-        <p className='leading-10 text-lg mb-3'>
-          <span className='font-bold'> &#x2713; 2. Deploy: </span> before we
-          deploy the application into the internet, we should test all the
-          functions of the application. In MERN stack, there are many frameworks
-          support for testing the application such as Jest, Enzyme, Mocha, Chai,
-          and Sinon. However, in this application, I only use simple one which
-          is end-to-end testing tests the entire application from the user's
-          perspective, simulating real user interactions. We will go through
-          every functions and check to make sure it minimums bugs.
+        <p className='leading-10 text-lg mb-0'>
+          <span className='font-bold'>
+            {' '}
+            &#x2713; 2. Deploy the application in website:{' '}
+          </span>{' '}
+          At this point, we should able to run the application in localhost:300
+          at your machine, all the functions work smoothly. However, only you
+          can use the application as it does not deploy into the internet. The
+          question came out is that how can we deploy the application into the
+          internet so everyone around the world can access the application.
+          There are so many cloud platforms provide service to deploy the full
+          MERN stack application such as Heroku, Render, Netlify, AWS, Azura,
+          etc. GitHub provides free deploy only the frontend of the application,
+          so if you have the backend with database, you may research some
+          platforms that included backend.
         </p>
+        <p className='leading-10 text-lg mb-3'>
+          Heroku is my choice in deploying this application as it is quite easy
+          and free for student like me. Heroku supports a range of programing
+          languages. Their documentation also clear and easy to understand. You
+          can check it at{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://devcenter.heroku.com/categories/reference'
+            target={'_blank'}
+          >
+            https://devcenter.heroku.com/categories/reference
+          </Link>{' '}
+          .
+        </p>
+        <p className='leading-10 text-lg  '>
+          &rarr; Firstly, we need to open account from Heroku, they may require
+          your credit card number to activate your account, however as I said if
+          you are student, we can use free service when you deploy one
+          application. Make sure you check your Heroku Dynos to avoid charging
+          in your credit card.
+        </p>
+        <p className='leading-10 text-lg  '>
+          &rarr; Secondly, once you have Heroku account, we can stet up the
+          application to deploy.
+        </p>
+        <p className='leading-10 text-lg  ml-8'>
+          - cd to frontend folder and run the command: npm run build, this
+          command will create build folder in the frontend of the application.
+        </p>
+        <p className='leading-10 text-lg  ml-8'>
+          - Set up the code below to your server.js in the backend.
+        </p>
+        <CodeSnip14 des='Set up to deploy in server.js' />
+        <p className='leading-10 text-lg  ml-8'>
+          - Set up the package.json in the backend following code:
+        </p>
+        <ProjectsCard des=' Set up code on backend package.json' src={pic15} />
+        <p className='leading-10 text-lg  ml-8'>
+          - Add the current node version on your machine into the package.json
+          in the frontend, using command node –version to check node version in
+          your machine.
+        </p>
+        <p className='leading-10 text-lg  ml-8'>
+          - Create Procfile and place it at the application’s root folder.
+          Please make sure the name correct to avoid error when deploying.
+        </p>
+        <CodeSnipLine
+          code='web: node backend/server.js'
+          des='Procfile content, name is Procfile '
+        />
+        <p className='leading-10 text-lg  ml-8'>
+          - Create repository and push all the codes into GitHub Account
+        </p>
+       
 
         <h2 className='text-center text-xl font-bold'>Conclusion</h2>
         <p className='leading-10 text-lg'>

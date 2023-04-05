@@ -4,8 +4,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeSnip13 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `
-import { configureStore } from '@reduxjs/toolkit';
+  const codeString = `import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '../features/auth/authSlice';
 import noteReducer from '../features/notes/noteSlice';
 
@@ -14,10 +13,7 @@ export const store = configureStore({
     auth: authReducer,
     notes: noteReducer,
   },
-});
-
-  
-  `;
+});`;
   const des = props.des;
   return (
     <div

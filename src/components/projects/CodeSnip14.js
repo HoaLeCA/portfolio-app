@@ -2,24 +2,19 @@ import React, { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const CodeSnip10 = (props) => {
+const CodeSnip14 = (props) => {
   const [copy, setCopy] = useState(false);
-  const codeString = `// set up note router  
-const express = require('express');
-const router = express.Router();
-const {
-  getNotes,
-  setNotes,
-  updateNotes,
-  deleteNotes,
-} = require('../controller/noteController');
-const { protect } = require('../middleware/authMiddleware');
-router.route('/').get(protect, getNotes).post(protect, setNotes);
-router.route('/:id').put(protect, updateNotes).delete(protect, deleteNotes);
-module.exports = router;
-
-// connect noteController to server.js -> add this code to server.js
-app.use('/api/notes', require('./routers/noteRoutes'));`;
+  const codeString = `if (process.env.NODE_ENV === 'production') {
+    // static folder
+    app.use(express.static(path.join(__dirname, '../frontend/build')));
+    app.get('*', (req, res) =>
+      res.sendFile(
+        path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+      )
+    );
+  } else {
+    app.get('/', (req, res) => res.send('Please set production mode'));
+  }   `;
   const des = props.des;
   return (
     <div
@@ -78,4 +73,4 @@ app.use('/api/notes', require('./routers/noteRoutes'));`;
   );
 };
 
-export default CodeSnip10;
+export default CodeSnip14;
