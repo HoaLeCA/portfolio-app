@@ -91,12 +91,19 @@ const ProjectsPart2 = () => {
           application's data, providing APIs for the frontend to consume, and
           ensuring the application's security, reliability, and performance. As
           I explained in the first blog, in MERN Stack, we are using Node.js as
-          your server-side platform, Express.js as your web application
-          framework, and MongoDB as your database. I assumed that we all have
-          installed Node.js on the machine and created MongoDB Atlas’s account
-          (a cloud MongoDB). Should you miss this part, please check my first
-          blog (link) for more information about it. There are many codes editor
-          that you can prefer, but I am using Visual Studio Code on this demon.
+          the server-side platform, Express.js as the web application framework,
+          and MongoDB as the database. I assumed that we all have installed
+          Node.js on the machine and created MongoDB Atlas’s account (a cloud
+          MongoDB). Should you miss this part, please check{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://portfolio-app-hoa.vercel.app/mern-stack-blog-part-1'
+            target={'_blank'}
+          >
+            my first blog
+          </Link>{' '}
+          for more information about it. There are many codes editor that you
+          can prefer, but I am using Visual Studio Code on this demon.
         </p>
 
         <div className='ml-8'>
@@ -165,8 +172,15 @@ const ProjectsPart2 = () => {
             code link
           </Link>
           , feel free to fork or clone to test this application. You can also
-          check the link that I deployed the application in Heroku ( ). That’s
-          cool, right? If you read to here, I hope you get some idea on
+          check the link that I deployed the application in Heroku{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://infinite-taiga-61697.herokuapp.com/login'
+            target={'_blank'}
+          >
+            deploy link
+          </Link>
+          . That’s cool, right? If you read to here, I hope you get some idea on
           structuring folder in MERN. The next step we will go details how to
           set up and create small application named Note-taking. Let's work on
           each component.
@@ -195,13 +209,13 @@ const ProjectsPart2 = () => {
               {' '}
               &#x2713; 2. Config folder - connects an application to MongoDB.:{' '}
             </span>
-            When you login into your account in MongoDB Atlas, you will see the
-            Database tab (1) after completing all the steps. The you click on
-            Connect (2) to get the link use to connect to your server - check
-            the steps below (make sure you create file server.js in the root
-            folder of the application to config all information that need to
-            connect the application to Server and Database, check my folder
-            structure if you missed it).
+            When you login into your account in MongoDB Atlas and completed step
+            by step, you will see the Database tab (1). Then you click on
+            Connect (2) to get the link use to connect to the server - check the
+            steps below (make sure you create file server.js in the root folder
+            of the application to config all information that need to connect
+            the application to Server and Database, check my folder structure if
+            you missed it).
           </p>
           <ProjectsCard des=' 1- Steps to connect with MongoDB' src={pic9} />
           <ProjectsCard des=' 2- Steps to connect with MongoDB' src={pic10} />
@@ -238,13 +252,15 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mt-3'>
             <span className='font-bold'> &#x2713; 4. Model Folder: </span> the
             models on this application is quite simple with two models which are
-            user model and note model where user model will link with note model
+            user model and note model, the user model will link with note model
             in the database.
           </p>
           <p className='leading-10 text-lg mb-3 '>
             - User Model: this model will store all user information into
             MongoDB. Below is a sample code for User model, you can try to
-            create the same with Note Model.
+            create the same way with note model - the note model will link to
+            user model through ObjectId in Mongoose. If you have issues please
+            reference to my code in GitHub.
           </p>
           <CodeSnip5 des='User Model' />
           <p className='leading-10 text-lg mt-3'>
@@ -341,9 +357,9 @@ const ProjectsPart2 = () => {
           </p>
           <CodeSnip10 des='noteRoute.js sample code' />
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
-            The we can use Postman to test the function of noteController. Once
-            we pass all the tests, it is a time we complete a simple backend.
-            &#128079; &#128079; &#128079; &#128079; WELL DONE!
+            Then we can use Postman to test the function of userController and
+            noteController. Once we pass all the tests, it is a time we complete
+            a simple backend. &#128079; &#128079; &#128079; &#128079; WELL DONE!
           </p>
         </div>
         <h2 className='text-left mt-5 text-xl font-bold'>B. Frontend</h2>
@@ -394,7 +410,7 @@ const ProjectsPart2 = () => {
           </p>
           <CodeSnipLine
             des='Install frameworks and npm packages'
-            code='npm i axios  redux  react-router-dom  react-toastify yup formik'
+            code='npm i axios cors  redux  react-router-dom  react-toastify yup formik'
           />
           <p className='leading-10 text-lg py-3'>
             <span className='font-bold'> &#8594; </span> Recap frontend
