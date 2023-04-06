@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from '../layouts/Title';
+import { AiOutlineLink } from 'react-icons/ai';
 import {
   pic10,
   pic11,
@@ -45,7 +46,7 @@ const ProjectsPart2 = () => {
         <h1 className='text-center text-lg font-bold'>
           Part 2: Build Simple Note Taking Web Application Using MERN Stack
         </h1>
-        <p className='leading-10 text-lg italic text-center'>
+        <p className=' leading-10 text-lg italic text-center'>
           Written by:{' '}
           <Link
             className=' hover:text-red-500'
@@ -53,7 +54,17 @@ const ProjectsPart2 = () => {
             target={'_blank'}
           >
             Hoa Le
-          </Link>
+          </Link>{' '}
+        </p>
+        <p className=' flex flex-wrap justify-center items-center gap-3 leading-10 text-lg italic text-center'>
+          <AiOutlineLink />
+          <Link
+            className=' hover:bg-violet-600'
+            to='https://infinite-taiga-61697.herokuapp.com'
+            target={'_blank'}
+          >
+            https://infinite-taiga-61697.herokuapp.com
+          </Link>{' '}
         </p>
         <p className='leading-10 text-lg'>
           In the previous blog, I have provided a lot of theory information
