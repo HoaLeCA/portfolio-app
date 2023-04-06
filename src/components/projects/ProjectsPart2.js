@@ -580,8 +580,8 @@ const ProjectsPart2 = () => {
             {' '}
             &#x2713; 2. Deploy the application in website:{' '}
           </span>{' '}
-          At this point, we should able to run the application in localhost:300
-          at your machine, all the functions work smoothly. However, only you
+          At this point, we should able to run the application in localhost:3000
+          in your machine, all the functions work smoothly. However, only you
           can use the application as it does not deploy into the internet. The
           question came out is that how can we deploy the application into the
           internet so everyone around the world can access the application.
@@ -642,10 +642,54 @@ const ProjectsPart2 = () => {
           des='Procfile content, name is Procfile '
         />
         <p className='leading-10 text-lg  ml-8'>
-          - Create repository and push all the codes into GitHub Account
+          - Create repository and push all the codes into GitHub Account.
         </p>
-       
-
+        <p className='leading-10 text-lg  '>
+          &rarr; Heroku commands use to deploy, in the VSCode terminal run the
+          following command to push the codes and deploy into Heroku.
+        </p>
+        <p className='leading-10 text-lg  ml-8'>
+          - Create repository and push all the codes into GitHub Account. Once
+          we press enter, it will ask you to authenticate before processing.
+        </p>
+        <CodeSnipLine
+          code='heroku create'
+          des='Command to create project in Heroku'
+        />
+        <p className='leading-10 text-lg  ml-8'>
+          - After complete the command above, we will check the Heroku account
+          to see the project and set up Config Vars to make you copy all
+          contents in .env that we had from the root directory of the project
+          into Vars environment in Heroku. Then, we go to the terminal and run
+          the command below.
+        </p>
+        <CodeSnipLine
+          code='git push heroku main'
+          des='Push the code and deploy to Heroku'
+        />
+        <p className='leading-10 text-lg mt-3'>
+          <span className='text-2xl'>&#9888;</span> It may take a few minutes to
+          complete the command above and you will see the information display on
+          the terminal. In case of getting error, you can debug it using the
+          information displayed from the terminal.
+        </p>
+        <p className='leading-10 text-lg mt-3'>
+          <span className='text-2xl'>&#128079; </span> After completed running
+          the command, you would see the URL link for the deploying application,
+          and this is the URL for the note-taking application after deployed
+          into Heroku{' '}
+          <Link
+            className='underline underline-offset-4 hover:bg-violet-600'
+            to='https://infinite-taiga-61697.herokuapp.com/'
+            target={'_blank'}
+          >
+            https://infinite-taiga-61697.herokuapp.com/
+          </Link>{' '}
+          . If you are following along with me until here, WELL DONE
+          &#128079;&#128079;&#128079;&#128079; you have completed creating and
+          deploy full MERN stack simple application. I hope you are enjoying
+          this small application.
+        </p>
         <h2 className='text-center text-xl font-bold'>Conclusion</h2>
         <p className='leading-10 text-lg'>
           The MERN stack provides a complete solution for building modern and
@@ -659,8 +703,7 @@ const ProjectsPart2 = () => {
           With supporting from large community and developers around the world
           and the flexible from wide range of library (node package manage –
           npm) that makes MERN becomes the most popular technology in recent
-          years. The next step we will discovery on how to build the full web
-          application using MERN Stack and its library.
+          years.
         </p>
         <p className='leading-10 text-lg'>
           Thank you for reading my blog. I am happy to have your feedback!
