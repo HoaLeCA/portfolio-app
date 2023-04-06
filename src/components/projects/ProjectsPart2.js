@@ -67,18 +67,18 @@ const ProjectsPart2 = () => {
           </Link>{' '}
         </p>
         <p className='leading-10 text-lg'>
-          In the previous blog, I have provided a lot of theory information
-          about MERN Stack technology, and how to divide each part on MERN. I
-          think it is hard to image and connect each element without put the
-          theory into practical. In this second part, I'll be walking you
-          through my experience of building a full-stack web application using
-          MongoDB, Express, React, and Node.js. The project is a simple Note
-          Taking web application where people can create new users, authenticate
-          user, and add the note. This simple project will showcase how to
-          integrate these technologies to create a seamless user experience. In
-          the rest of this post, we'll cover how to create backend, frontend and
-          deploy this project to Heroku. So, let's dive in the project and start
-          building the application from scratch!
+          In the previous blog, I provided a lot of theoretical information
+          about MERN Stack technology, and how to divide each part of MERN. I
+          think it is hard to imagine and connect each element without putting
+          the theory into practice. In this second part, I'll be walking you
+          through my experience of building a full-stack web application
+          usingMongoDB, Express, React, and Node.js. The project is a simple
+          Note-Taking web application where people can create new users,
+          authenticate users, and add notes. This simple project will showcase
+          how to integrate these technologies to create a seamless user
+          experience. In the rest of this post, we'll cover how to create the
+          backend, frontend and deploy this project to Heroku. So, let's dive
+          into the project and start building the application from scratch!
         </p>
         <h2 className='text-left mt-5 text-xl font-bold'>A. Backend</h2>
         <ProjectsCard
@@ -87,13 +87,13 @@ const ProjectsPart2 = () => {
         />
 
         <p className='leading-10 text-lg mb-0'>
-          Backend plays a crucial role in the MERN stack by managing the
+          The backend plays a crucial role in the MERN stack by managing the
           application's data, providing APIs for the frontend to consume, and
           ensuring the application's security, reliability, and performance. As
-          I explained in the fist blog, in MERN Stack, we are using Node.js as
+          I explained in the first blog, in MERN Stack, we are using Node.js as
           your server-side platform, Express.js as your web application
           framework, and MongoDB as your database. I assumed that we all have
-          installed Node.js in the machine and created MongoDB Atlas’s account
+          installed Node.js on the machine and created MongoDB Atlas’s account
           (a cloud MongoDB). Should you miss this part, please check my first
           blog (link) for more information about it. There are many codes editor
           that you can prefer, but I am using Visual Studio Code on this demon.
