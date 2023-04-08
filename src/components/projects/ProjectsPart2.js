@@ -68,23 +68,21 @@ const ProjectsPart2 = () => {
         </p>
         <p className='leading-10 text-lg'>
           In the previous blog, I provided a lot of theoretical information
-          about MERN Stack technology, and how to divide each part of MERN. I
-          think it is hard to imagine and connect each element without putting
-          the theory into practice. In this second part, I'll be walking you
-          through my experience of building a full-stack web application
-          usingMongoDB, Express, React, and Node.js. The project is a simple
-          Note-Taking web application where people can create new users,
-          authenticate users, and add notes. This simple project will showcase
-          how to integrate these technologies to create a seamless user
-          experience. In the rest of this post, we'll cover how to create the
-          backend, frontend and deploy this project to Heroku. So, let's dive
-          into the project and start building the application from scratch!
+          about MERN Stack technology, and some ideas on how to divide each part
+          of MERN. I think it is hard to imagine and connect each elements
+          without putting the theory into practice. In this second part, I'll be
+          walking you through my experience of building a full-stack web
+          application usingMongoDB, Express, React, and Node.js when I am
+          learning this technology. The project I used to demon on this blog
+          named Note-Taking web application. In this application, people can
+          register new users, authenticate users, and add notes. This simple
+          project will show how to integrate these technologies to create a
+          seamless user experience. In the rest of this post, we'll cover steps
+          by steps on how to create the backend, frontend and deploy this
+          project into Heroku. So, let's dive into the project and start
+          building it.
         </p>
-        <h2 className='text-left mt-5 text-xl font-bold'>A. Backend</h2>
-        <ProjectsCard
-          des=' What is MERN? (image copied from internet source)'
-          src={mern}
-        />
+        <h2 className='text-left mt-5 text-xl font-bold'>A. Create Backend</h2>
 
         <p className='leading-10 text-lg mb-0'>
           The backend plays a crucial role in the MERN stack by managing the
@@ -121,9 +119,8 @@ const ProjectsPart2 = () => {
           <CodeSnipLine code='npm install bcrypt colors dotenv express express-async-handler jsonwebtoken mongoose concurrently nodemon' />
         </div>
         <p className='leading-10 text-lg mt-5'>
-          <span className='font-bold'>
-            To organize folder structure in the backend, I suggest we will
-            follow the structure that I mentioned on the first blog:
+          <span className=''>
+            The structure folder I organize in this demon as following.
           </span>
         </p>
         <ProjectsCard des=' Backend folder structure recommended' src={pic8} />
@@ -141,14 +138,14 @@ const ProjectsPart2 = () => {
           </p>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> &#8594; </span>Middleware folder: store
-            all the middleware that function or a set of functions that execute
-            between the client request and the server response such as Error
-            Handling, Authentication, etc.
+            all the middlewares are using in this application. The middelware is
+            set of functions that execute between the client request and the
+            server response such as Error Handling, Authentication, etc.
           </p>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> &#8594; </span> Model folder: store all
-            models of the application, it is quite similar with model we knew in
-            Java Servlet and JSP on last semester.
+            models of the application, it is similar with model we knew in Java
+            Servlet and JSP on last semester.
           </p>
           <p className='leading-10 text-lg '>
             <span className='font-bold'> &#8594; </span> Routers: store all
@@ -181,8 +178,8 @@ const ProjectsPart2 = () => {
             deploy link
           </Link>
           . That’s cool, right? If you read to here, I hope you get some idea on
-          structuring folder in MERN. The next step we will go details how to
-          set up and create small application named Note-taking. Let's work on
+          structuring the backend folder for this application. The next step we
+          will go details on creating a Note-taking application. Let's work on
           each component.
         </p>
         <div className='ml-8'>
@@ -199,7 +196,7 @@ const ProjectsPart2 = () => {
             >
               https://account.mongodb.com/account/login
             </Link>{' '}
-            and set up your account. It is straight forward on how to set up.
+            and set up your account. It is straight forward on how to set up it.
             Once you have an account, you can use MongoDB Compass to check your
             data. Should you have problem when you connect with MongoDB Compass,
             you can check their documentation for more information.
@@ -207,15 +204,16 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mb-3'>
             <span className='font-bold'>
               {' '}
-              &#x2713; 2. Config folder - connects an application to MongoDB.:{' '}
+              &#x2713; 2. Config folder - connects an application to MongoDB:{' '}
             </span>
-            When you login into your account in MongoDB Atlas and completed step
-            by step, you will see the Database tab (1). Then you click on
-            Connect (2) to get the link use to connect to the server - check the
-            steps below (make sure you create file server.js in the root folder
-            of the application to config all information that need to connect
-            the application to Server and Database, check my folder structure if
-            you missed it).
+            When you login into your account in MongoDB Atlas and completed the
+            steps they ask, you will see the Database tab (1). Then you click on
+            Connect (2) to get the link use to connect to the server, this
+            connection link should place in an .env for security reason - check
+            the steps below (make sure you create file server.js in the root
+            folder of the application to config all information that need to
+            connect the application to Server and Database, check my folder
+            structure if you missed it).
           </p>
           <ProjectsCard des=' 1- Steps to connect with MongoDB' src={pic9} />
           <ProjectsCard des=' 2- Steps to connect with MongoDB' src={pic10} />
@@ -223,29 +221,29 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mt-3'>
             &#x26A0; You will need the password to fill on the &lt;password&gt;
             on the link above. It is easily to generate when you check security
-            tab and Database Access when you login into MongoDB Atlas account.
-            Once you got all information needed, you can save it on .env file
-            (.env file is environment variable where you will store all
-            sensitive information to keep your data safety when you push your
-            code to internet like GitHub).
+            tab and Database Access on the left hand side when you login into
+            MongoDB Atlas account. Once you got all information needed, you can
+            save it on .env file (.env file is environment variable where you
+            will store all sensitive information to keep your data safety when
+            you push your code to internet like GitHub).
           </p>
           <p className='leading-10 text-lg'>
             Once you had the link to that need to use to connect with MongoDB.
-            We can work on the code at Config folder to connect application with
-            database.&#x26A0; process.env.MONGO_URL is how we connect with your
-            .env file, please make sure you set up .env file and have MONGO_URL
-            in it.
+            We can work on creating the code at Config folder to connect
+            application with database.&#x26A0; process.env.MONGO_URL is how we
+            connect with your .env file, please make sure you set up .env file
+            and have MONGO_URL in it to avoid error.
           </p>
           <p className='leading-10 text-lg mb-3'>
             <span className='font-bold'> &#x2713; 3. server.js: </span>
             this file will configure all server information in the application.
             Please make sure you install all models and npm package to avoid
-            errors. To run and test a backend server, we can change a script
-            from package.json in the Backend. Once you completed it, you can run
-            the command <span className='underline'>npm run start</span> in the
-            VS Code Terminal to start backend server. Should you have errors
-            when start running command, you can check error information and fix
-            it.
+            errors. To run and test a backend server, we can modify a script
+            from package.json in the Backend as below. Once you completed it, cd
+            to backend folder and run the command{' '}
+            <span className='underline'>npm run start</span> in the VS Code
+            Terminal to start backend server. Should you have errors when start
+            running command, you can check error information and fix it.
           </p>
           <CodeSnip3 des='Setup Server.js' />
           <CodeSnip4 des='Modify Script On Package.json in Backend' />
@@ -327,7 +325,7 @@ const ProjectsPart2 = () => {
             folder, create authRoute.js on routers folder and add the code
             below.
           </p>
-          <CodeSnip8 des='authRoute.js sample' />
+          <CodeSnip8 des='authRoute.js sample and sample code connect userController to server.js' />
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
             After we setup router for userController at userRoute.js in routers
             folder, we will connect the routes to server.js by adding the code
@@ -336,7 +334,7 @@ const ProjectsPart2 = () => {
             time we can move to the next step to create noteController.js
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            &rarr; noteController.js same idea with userController.js,
+            &rarr; noteController.js has same idea with userController.js,
             noteController.js will handle all CRUD of the note, user can create
             new note, update, delete, and retrieve note from database.
           </p>
@@ -355,28 +353,28 @@ const ProjectsPart2 = () => {
             file named noteRoutes.js. On sever.js add the code to connect
             noteRoute.js to server
           </p>
-          <CodeSnip10 des='noteRoute.js sample code' />
+          <CodeSnip10 des='noteRoute.js sample and sample code connect noteController to server.js' />
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
             Then we can use Postman to test the function of userController and
             noteController. Once we pass all the tests, it is a time we complete
             a simple backend. &#128079; &#128079; &#128079; &#128079; WELL DONE!
           </p>
         </div>
-        <h2 className='text-left mt-5 text-xl font-bold'>B. Frontend</h2>
+        <h2 className='text-left mt-5 text-xl font-bold'>B. Create Frontend</h2>
         <p className='leading-10 text-lg mb-0'>
           Frontend provides an interactive and user-friendly interface for the
           web application. The frontend is responsible for displaying data and
           content to the user and allowing them to interact with the application
           through various user interface components such as forms, buttons, and
-          menus. The instructions below provide step to initialize React in the
-          frontend on the application.
+          menus. The instructions below provides the steps to initialize React
+          in the frontend on the application.
         </p>
         <div className='ml-8'>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> &#8594; </span>Open your terminal or
             command prompt and navigate to the frontend directory cd frontend.
           </p>
-          <p className='leading-10 text-lg'>
+          <p className='leading-10 text-lg mb-3'>
             <span className='font-bold'> &#8594; </span>Run the following
             command to initialize a new React project. Please Note the dot at
             the end of the command. This tells create-react-app to use the
@@ -387,19 +385,19 @@ const ProjectsPart2 = () => {
               code='npx create-react-app .'
             />
           </p>
-          <p className='leading-10 text-lg'>
+          <p className='leading-10 text-lg '>
             <span className='font-bold'> &#8594; </span>Wait for the
             installation process to complete. Once it's done, you can start the
             development server by running: npm start.
           </p>
           <p className='leading-10 text-lg mb-3'>
             <span className='font-bold'> &#8594; </span> We also need install
-            some npm package required to build on this application. We may need
-            a few more, but we will find out it when we needed. Once we run a
-            command to install all the frameworks and npm package, we can start
-            building the frontend of the application. For more information about
-            the purpose and how to use those packages and frameworks, you can
-            check at{' '}
+            some npm packages that required to build on this application. We may
+            need a few more, but we will find out it when we needed. Once we run
+            a command to install all the frameworks and npm package, we can
+            start building the frontend of the application. For more information
+            about the purpose and how to use those packages and frameworks, you
+            can check at{' '}
             <Link
               className='underline underline-offset-4 hover:bg-violet-600'
               to='https://www.npmjs.com/'
@@ -445,11 +443,11 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mt-3 ml-8'>
             + index.css in the customize CSS for this application, I also using
             Bootstrap 5 on top of the customize CSS, you can also use
-            Tailwind.css.
+            Tailwind.css if you are familiar with it.
           </p>
           <p className='leading-10 text-lg mt-3 ml-8'>
-            + If you did some research about React, you may know that there are
-            some downsides of using form in React. Therefore, there are many
+            + If you did research about React, you may know that there are some
+            downsides of using form in React. Therefore, there are many
             frameworks from Open Source came on handy to handle its. In this
             application, I am using Formik and Yup for form and form validation.
             Should you want to go deeper on this topic, you can check at{' '}
@@ -464,12 +462,13 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg py-3'>
             <span className='font-bold'> &#x2713; 1. Build component: </span> as
             I explained earlier, a component is a reusable piece of code that
-            can be used to create a specific part of a UI. There are 6
+            can be used to create a specific part of a UI. There are 7
             components are using in this application, a header and footer are
             used as header and footer of the application. Layout is where we
             organize the layout of the application, CustomInput is used as input
             to get information from use, the Noteform and NoteIteam have the
-            same function with CustomInput. There are many ways you can make for
+            same function with CustomInput, and the Spinner is loading symbol
+            when program is wating to load. There are many ways you can make for
             the components, it depends on how you want to organize your
             application. Component make the code more efficiency and
             well-organized. Please check my GitHub{' '}
@@ -564,8 +563,8 @@ const ProjectsPart2 = () => {
           <p className='leading-10 text-lg mt-3'>
             <span className='text-2xl'>&#9888;</span> The noteService.js and
             noteSlice.js also have the same approach with authService.js and
-            authSlice.js. You can try it by yourself and check your code with my
-            code at{' '}
+            authSlice.js. You can try it by yourself and compare your code with
+            my code at{' '}
             <Link
               className='underline underline-offset-4 hover:bg-violet-600'
               to='https://github.com/HoaLeCA/Note-Taking/tree/main/frontend/src/features/notes'
@@ -585,10 +584,10 @@ const ProjectsPart2 = () => {
           />
 
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
-            If you go to this step, we completed the simple MERN stack web
+            If you go to this step, we have completed the simple MERN stack web
             application &#128079; &#128079; &#128079; &#128079; WELL DONE!. The
-            next step we will test all the function of the application to
-            eliminate the bugs.
+            next step we will test all the functions of the application to
+            eliminate the bugs and deploy it into Heroku.
           </p>
         </div>
         <h2 className='text-left  text-xl font-bold'>C. Testing and Deploy</h2>
@@ -640,7 +639,7 @@ const ProjectsPart2 = () => {
           in your credit card.
         </p>
         <p className='leading-10 text-lg  '>
-          &rarr; Secondly, once you have Heroku account, we can stet up the
+          &rarr; Secondly, once you have Heroku account, we can set up the
           application to deploy.
         </p>
         <p className='leading-10 text-lg  ml-8'>
@@ -648,7 +647,7 @@ const ProjectsPart2 = () => {
           command will create build folder in the frontend of the application.
         </p>
         <p className='leading-10 text-lg  ml-8'>
-          - Set up the code below to your server.js in the backend.
+          - add the code below to your server.js in the backend.
         </p>
         <CodeSnip14 des='Set up to deploy in server.js' />
         <p className='leading-10 text-lg  ml-8'>
@@ -657,8 +656,8 @@ const ProjectsPart2 = () => {
         <ProjectsCard des=' Set up code on backend package.json' src={pic15} />
         <p className='leading-10 text-lg  ml-8'>
           - Add the current node version on your machine into the package.json
-          in the frontend, using command node –version to check node version in
-          your machine.
+          in the frontend, you can use command node –version to check node
+          version in your machine.
         </p>
         <p className='leading-10 text-lg  ml-8'>
           - Create Procfile and place it at the application’s root folder.
@@ -676,19 +675,20 @@ const ProjectsPart2 = () => {
           following command to push the codes and deploy into Heroku.
         </p>
         <p className='leading-10 text-lg  ml-8'>
-          - Create repository and push all the codes into GitHub Account. Once
-          we press enter, it will ask you to authenticate before processing.
+          - Create project in Heroku, once we press enter, it will ask you to
+          authenticate before processing, you can you the username and password
+          created from the previous steps to authenticate this step.
         </p>
         <CodeSnipLine
           code='heroku create'
           des='Command to create project in Heroku'
         />
         <p className='leading-10 text-lg  ml-8'>
-          - After complete the command above, we will check the Heroku account
-          to see the project and set up Config Vars to make you copy all
-          contents in .env that we had from the root directory of the project
-          into Vars environment in Heroku. Then, we go to the terminal and run
-          the command below.
+          - It takes a fews minutes to compete, once it finished, we will check
+          the Heroku account to see the project and set up Config Vars to make
+          you copy all contents in .env that we had from the root directory of
+          the project into Vars environment in Heroku. Then, we go to the
+          terminal and run the command below.
         </p>
         <CodeSnipLine
           code='git push heroku main'
@@ -703,8 +703,8 @@ const ProjectsPart2 = () => {
         <p className='leading-10 text-lg mt-3'>
           <span className='text-2xl'>&#128079; </span> After completed running
           the command, you would see the URL link for the deploying application,
-          and this is the URL for the note-taking application after deployed
-          into Heroku{' '}
+          and this is the URL for the note-taking application after I deployed
+          successfully Note-taking application into Heroku{' '}
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://infinite-taiga-61697.herokuapp.com/'
@@ -714,10 +714,11 @@ const ProjectsPart2 = () => {
           </Link>{' '}
           . If you are following along with me until here, WELL DONE
           &#128079;&#128079;&#128079;&#128079; you have completed creating and
-          deploy full MERN stack simple application. I hope you are enjoying
-          this small application.
+          deploying the full MERN stack simple application. I hope you are
+          enjoying and learning some things from building with me on this
+          application.
         </p>
-        <h2 className='text-center text-xl font-bold'>Conclusion</h2>
+        <h2 className='text-left text-xl font-bold'>C. Conclusion</h2>
         <p className='leading-10 text-lg'>
           The MERN stack provides a complete solution for building modern and
           dynamic full web applications that meet the demands of today's users.
