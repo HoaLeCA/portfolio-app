@@ -283,24 +283,27 @@ const ProjectsPart2 = () => {
               {' '}
               &#x2713; 6. Controller and Routes:{' '}
             </span>{' '}
-            In this application, we only need two controllers, userController.js
-            handles all CRUD of users and noteController.js handles all CRUD of
-            notes.
+            In this application, we only need two controllers:
+            userController.js, which handles all CRUD operations related to
+            users, and noteController.js, which handles all CRUD operations
+            related to notes.
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            &rarr; userController.js is where we can create new user, delete
-            user, edit user information, retrieve user information and user
-            login. There are many other models related to how make the
-            application more secure, in this simple application, I only use
-            Jsonwebtoken and hash function to encrypt password.
+            &rarr; userController.js is responsible for creating, deleting,
+            editing, and retrieving user information, as well as handling user
+            login. In this simple application, only two security measures are
+            used: Jsonwebtoken for authentication and a hash function to encrypt
+            passwords. Although other security models could be implemented, they
+            are not necessary for the purpose of this application.
           </p>
           <p className='leading-10 text-lg mb-3 ml-8'>
-            + registerUser: the program will get input from user which including
-            name, email, and password to create new user. The password will be
-            hashing and encrypting before save those into MongoDB. The
-            registerUser also have some basic login such as verify user exist in
-            the database, if user already stored in database, it will send
-            message to user.
+            + The registerUser function receives user input, including their
+            name, email, and password, to create a new user. The password is
+            hashed and encrypted before being saved to MongoDB. Additionally,
+            the function performs basic login procedures, such as verifying
+            whether the user already exists in the database. If the user is
+            already stored in the database, the function sends a message to the
+            user.
           </p>
           <p className='leading-10 text-lg mb-3 ml-8'>
             + loginUser: the program will get information about email and
@@ -328,31 +331,35 @@ const ProjectsPart2 = () => {
           </p>
           <CodeSnip8 des='authRoute.js sample and sample code connect userController to server.js' />
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
-            After we setup router for userController at userRoute.js in routers
-            folder, we will connect the routes to server.js by adding the code
-            above to server.js. At this point, we can use Postman to test the
-            function of userController. Once you pass all the tests, it is a
-            time we can move to the next step to create noteController.js
+            After setting up the router for userController in userRoute.js under
+            the routers folder, the next step is to connect the routes to
+            server.js by adding the appropriate code. At this point, Postman can
+            be used to test the functionality of userController. Once all tests
+            have passed, the next step is to move on to creating
+            noteController.js.
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            &rarr; noteController.js has same idea with userController.js,
-            noteController.js will handle all CRUD of the note, user can create
-            new note, update, delete, and retrieve note from database.
+            &rarr; Similarly to userController.js, noteController.js is
+            responsible for handling all CRUD operations related to notes. Users
+            can create, update, delete, and retrieve notes from the database
+            using this controller.
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            <span className='text-2xl'>&#9888;</span> Please check my code in
-            GitHub for simple code of noteController.js at{' '}
+            <span className='text-2xl'>&#9888;</span>
+            Please review the code for noteController.js on my GitHub repository
+            at the{' '}
             <Link
               className='underline underline-offset-4 hover:bg-violet-600'
               to='https://github.com/HoaLeCA/Note-Taking/tree/main/backend/controller'
               target={'_blank'}
             >
-              link.{'  '}
-            </Link>
-            Once finished all functions we need in noteController.js, we will
-            move to set up routes for it. Go to routers folder and create new
-            file named noteRoutes.js. On sever.js add the code to connect
-            noteRoute.js to server
+              link{'  '}
+            </Link>{' '}
+            provided. Once all necessary functions have been completed in
+            noteController.js, the next step is to set up routes for it. To do
+            this, navigate to the routers folder and create a new file called
+            noteRoutes.js. Finally, add the appropriate code to server.js to
+            connect noteRoutes.js to the server.
           </p>
           <CodeSnip10 des='noteRoute.js sample and sample code connect noteController to server.js' />
           <p className='leading-10 text-lg mb-3 ml-8 mt-3'>
@@ -392,13 +399,13 @@ const ProjectsPart2 = () => {
             development server by running: npm start.
           </p>
           <p className='leading-10 text-lg mb-3'>
-            <span className='font-bold'> &#8594; </span> We also need install
-            some npm packages that required to build on this application. We may
-            need a few more, but we will find out it when we needed. Once we run
-            a command to install all the frameworks and npm package, we can
-            start building the frontend of the application. For more information
-            about the purpose and how to use those packages and frameworks, you
-            can check at{' '}
+            <span className='font-bold'> &#8594; </span> To build this
+            application, we need to install several npm packages. While we may
+            require additional packages later on, we can identify them as
+            needed. After running the command to install all required frameworks
+            and packages, we can proceed with building the frontend of the
+            application. For more information on the purpose and usage of these
+            packages and frameworks, please refer to{' '}
             <Link
               className='underline underline-offset-4 hover:bg-violet-600'
               to='https://www.npmjs.com/'
@@ -484,22 +491,22 @@ const ProjectsPart2 = () => {
           </p>
           <ProjectsCard des=' component folders' src={pic12} />
           <p className='leading-10 text-lg py-3'>
-            <span className='font-bold'> &#x2713; 2. Pages folder: </span> To
-            simplicity, there only three pages on this application. The login
-            page provide login function to user login into their account and
-            take note. The register page will place a new user can create a new
-            account to login into the application. The dashboard page is place
-            display all the notes from users, user can do CRUD for the note they
-            created. In the limitation of this application, I only create delete
-            note function, another functions I will push into GitHub link for
-            your reference.
+            <span className='font-bold'> &#x2713; 2. Pages folder: </span> This
+            application has three main pages for simplicity. The login page
+            allows users to sign in to their accounts and take notes. The
+            register page is for creating new accounts, which can then be used
+            to log in to the application. The dashboard page displays all notes
+            created by the user, and allows them to perform CRUD operations on
+            their notes. While only the delete note function is included in the
+            current version, additional functions will be pushed to the GitHub
+            link for your reference.
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            &rarr; register.js and login.js: using Formik and Yup make form
-            validation is easier than normal form in React. As you can see
-            below, when user does not input all the fields required, the program
-            will prompt the error to inform user. Please check my GitHub link to
-            see the code on this part{' '}
+            &rarr; register.js and login.js files use Formik and Yup to create
+            forms with easier validation in React. As shown below, when a user
+            fails to input all required fields, the program prompts an error
+            message to inform the user. Please refer to my GitHub link to view
+            the code for this section{' '}
             <Link
               className='underline underline-offset-4 hover:bg-violet-600'
               to='https://github.com/HoaLeCA/Note-Taking/tree/main/frontend/src/pages'
@@ -607,16 +614,14 @@ const ProjectsPart2 = () => {
             {' '}
             &#x2713; 2. Deploy the application in website:{' '}
           </span>{' '}
-          At this point, we should able to run the application in localhost:3000
-          in your machine, all the functions work smoothly. However, only you
-          can use the application as it does not deploy into the internet. The
-          question came out is that how can we deploy the application into the
-          internet so everyone around the world can access the application.
-          There are so many cloud platforms provide service to deploy the full
-          MERN stack application such as Heroku, Render, Netlify, AWS, Azura,
-          etc. GitHub provides free deploy only the frontend of the application,
-          so if you have the backend with database, you may research some
-          platforms that included backend.
+          At this point, the application should be able to run smoothly on
+          localhost:3000 on your local machine. However, only you can access the
+          application as it has not been deployed to the internet. To deploy a
+          full MERN stack application, there are many cloud platforms available
+          such as Heroku, Render, Netlify, AWS, Azura, and more. GitHub provides
+          free deployment for the frontend of the application, but for backend
+          with database, you may need to research other platforms that offer
+          this service.
         </p>
         <p className='leading-10 text-lg mb-3'>
           Heroku is my choice in deploying this application as it is quite easy
@@ -685,11 +690,12 @@ const ProjectsPart2 = () => {
           des='Command to create project in Heroku'
         />
         <p className='leading-10 text-lg  ml-8'>
-          - It takes a fews minutes to compete, once it finished, we will check
-          the Heroku account to see the project and set up Config Vars to make
-          you copy all contents in .env that we had from the root directory of
-          the project into Vars environment in Heroku. Then, we go to the
-          terminal and run the command below.
+          - It will take a few minutes to complete. Once finished, we can check
+          our Heroku account to see the project and set up Config Vars. We need
+          to copy all the contents from the .env file in the root directory of
+          the project into the environment Vars in Heroku. Then, we can go to
+          the terminal and run the following command to deploy the application
+          into Heroku:
         </p>
         <CodeSnipLine
           code='git push heroku main'
@@ -721,18 +727,18 @@ const ProjectsPart2 = () => {
         </p>
         <h2 className='text-left text-xl font-bold'>C. Conclusion</h2>
         <p className='leading-10 text-lg'>
-          The MERN stack provides a complete solution for building modern and
-          dynamic full web applications that meet the demands of today's users.
-          The four main components of the MERN stack—MongoDB, Express.js, React,
-          and Node.js —work together to provide a robust and efficient platform
-          for web development. Alternative choices for developer is to using
-          Angular instead of React (MEAN Stack) on a view, or using Next.js (a
-          popular React-based framework for building server-side rendered web
-          applications) on top of React to increase SEO for the web application.
-          With supporting from large community and developers around the world
-          and the flexible from wide range of library (node package manage –
-          npm) that makes MERN becomes the most popular technology in recent
-          years.
+          The MERN stack is a comprehensive solution for building modern and
+          dynamic web applications that cater to the needs of today's users. Its
+          four main components—MongoDB, Express.js, React, and Node.js—work
+          harmoniously to provide a robust and efficient platform for web
+          development. Alternatively, developers can opt to use Angular instead
+          of React (MEAN Stack) for the view, or incorporate Next.js (a popular
+          React-based framework for building server-side rendered web
+          applications) to enhance the web application's SEO. Thanks to the
+          support of a large and thriving community of developers worldwide, and
+          the flexibility offered by the wide range of libraries available
+          through Node Package Manager (npm), MERN has become the technology of
+          choice for many developers in recent years.
         </p>
         <p className='leading-10 text-lg'>
           Thank you for reading my blog. I am happy to have your feedback!
