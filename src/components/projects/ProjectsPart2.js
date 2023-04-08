@@ -67,20 +67,19 @@ const ProjectsPart2 = () => {
           </Link>{' '}
         </p>
         <p className='leading-10 text-lg'>
-          In the previous blog, I provided a lot of theoretical information
-          about MERN Stack technology, and some ideas on how to divide each part
-          of MERN. I think it is hard to imagine and connect each elements
-          without putting the theory into practice. In this second part, I'll be
-          walking you through my experience of building a full-stack web
-          application usingMongoDB, Express, React, and Node.js when I am
-          learning this technology. The project I used to demon on this blog
-          named Note-Taking web application. In this application, people can
-          register new users, authenticate users, and add notes. This simple
-          project will show how to integrate these technologies to create a
-          seamless user experience. In the rest of this post, we'll cover steps
-          by steps on how to create the backend, frontend and deploy this
-          project into Heroku. So, let's dive into the project and start
-          building it.
+          In the previous blog, I provided theoretical information about MERN
+          Stack technology and gave ideas on how to divide each part of MERN. I
+          think it is hard to imagine and connect each element together without
+          putting the theory into practise. In this second part, I'll be walking
+          you through my experience building a full-stack web application using
+          MongoDB, Express, React, and Node.js when I was learning this
+          technology. The project I used to demon in this blog is called
+          Note-Taking Web Application. In this application, people can register
+          new users, authenticate users, and add notes. This simple project will
+          show how to integrate these technologies to create a seamless user
+          experience. In the rest of this post, I'll cover step by step how to
+          create the backend, and frontend and deploy this project into Heroku.
+          So, let's dive into the project and start building it.
         </p>
         <h2 className='text-left mt-5 text-xl font-bold'>A. Create Backend</h2>
 
@@ -88,11 +87,11 @@ const ProjectsPart2 = () => {
           The backend plays a crucial role in the MERN stack by managing the
           application's data, providing APIs for the frontend to consume, and
           ensuring the application's security, reliability, and performance. As
-          I explained in the first blog, in MERN Stack, we are using Node.js as
-          the server-side platform, Express.js as the web application framework,
-          and MongoDB as the database. I assumed that we all have installed
-          Node.js on the machine and created MongoDB Atlas’s account (a cloud
-          MongoDB). Should you miss this part, please check{' '}
+          I explained in the first blog that in MERN Stack, we are using Node.js
+          as the the server-side platform, Express.js as the web application
+          framework, and MongoDB as the database. I assumed that we all have
+          Node.js on the machine and already created MongoDB Atlas’s account (a
+          cloud MongoDB). Should you miss this part please check{' '}
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://portfolio-app-hoa.vercel.app/mern-stack-blog-part-1'
@@ -100,27 +99,27 @@ const ProjectsPart2 = () => {
           >
             my first blog
           </Link>{' '}
-          for more information about it. There are many codes editor that you
+          for more information about it. There are many code editors that you
           can prefer, but I am using Visual Studio Code on this demon.
         </p>
 
         <div className='ml-8'>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> - Step 1</span>: Create folder name
-            Note_Taking in anywhere in your machine, in this folder we will
-            create two separate folders named frontend and backend.
+            Note_Taking anywhere in your machine, in this folder we will create
+            two separate folders named frontend and backend.
           </p>
           <p className='leading-10 text-lg mb-5'>
-            <span className='font-bold'>- Step 2</span>: - On the command line
-            on VS Code type: <span className='underline'>cd backend</span> to go
-            to backend folder, when we were on this folder, we will install all
-            the libraries that we need to build this application.
+            <span className='font-bold'>- Step 2</span>: - From the command line
+            on VS Code, type: <span className='underline'>cd backend</span> to
+            go to backend folder, when we were in this folder, we will install
+            all the libraries that we need to build this application.
           </p>
           <CodeSnipLine code='npm install bcrypt colors dotenv express express-async-handler jsonwebtoken mongoose concurrently nodemon' />
         </div>
         <p className='leading-10 text-lg mt-5'>
           <span className=''>
-            The structure folder I organize in this demon as following.
+            The structure folder that I organized in this demon is as follows
           </span>
         </p>
         <ProjectsCard des=' Backend folder structure recommended' src={pic8} />
@@ -128,28 +127,28 @@ const ProjectsPart2 = () => {
         <div className='ml-8'>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> &#8594; </span>Config folder: store the
-            configuration connect to MongoDB.
+            configuration that connects to MongoDB.
           </p>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> &#8594; </span> Controller folder:
-            store all the controllers that provides a central location for
+            store all the controllers that provide a central location for
             handling the business logic and ensuring that requests and responses
             are processed correctly.
           </p>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> &#8594; </span>Middleware folder: store
-            all the middlewares are using in this application. The middelware is
+            all middleware are using in this application. The middleware is a
             set of functions that execute between the client request and the
-            server response such as Error Handling, Authentication, etc.
+            server response, for example, Error Handling, Authentication, etc.
           </p>
           <p className='leading-10 text-lg'>
             <span className='font-bold'> &#8594; </span> Model folder: store all
-            models of the application, it is similar with model we knew in Java
-            Servlet and JSP on last semester.
+            the models from the application, which is similar to what we knew
+            about the model in Java Servlet and JSP last semester.
           </p>
           <p className='leading-10 text-lg '>
             <span className='font-bold'> &#8594; </span> Routers: store all
-            routes in the application, route is essentially a middleware
+            routes in the application, routes are essentially middleware
             function that listens for specific HTTP requests and routes them to
             the appropriate controller function that handles that request.
           </p>
@@ -160,7 +159,8 @@ const ProjectsPart2 = () => {
         </div>
 
         <p className='leading-10 text-lg '>
-          (*) Please note that I have pushed all codes into my GitHub account{' '}
+          (*) Please note that I have pushed all completed codes into my GitHub
+          account{' '}
           <Link
             className='underline underline-offset-4 hover:bg-violet-600'
             to='https://github.com/HoaLeCA/Note-Taking'
@@ -196,24 +196,26 @@ const ProjectsPart2 = () => {
             >
               https://account.mongodb.com/account/login
             </Link>{' '}
-            and set up your account. It is straight forward on how to set up it.
-            Once you have an account, you can use MongoDB Compass to check your
-            data. Should you have problem when you connect with MongoDB Compass,
-            you can check their documentation for more information.
+            and set up your account. It is very straightforward how to set it
+            up. Once you have an account, you can use MongoDB Compass to review
+            your data. If you have a problem when you are connecting with
+            MongoDB Compass, you can check their documentation for more
+            information.
           </p>
           <p className='leading-10 text-lg mb-3'>
             <span className='font-bold'>
               {' '}
-              &#x2713; 2. Config folder - connects an application to MongoDB:{' '}
+              &#x2713; 2. Config folder - connects an application to MongoDB
+              Atlas:{' '}
             </span>
-            When you login into your account in MongoDB Atlas and completed the
-            steps they ask, you will see the Database tab (1). Then you click on
-            Connect (2) to get the link use to connect to the server, this
-            connection link should place in an .env for security reason - check
-            the steps below (make sure you create file server.js in the root
-            folder of the application to config all information that need to
-            connect the application to Server and Database, check my folder
-            structure if you missed it).
+            When you log into your MongoDB Atlas's account, and finish the steps
+            they ask, you will see the Database tab (1). Then you click on
+            Connect (2) to get the link used toconnect to the server, this link
+            should place in a .env for security reasons - check the steps below
+            (make sure you create file server.js in the root folder of the
+            application to config all information that needs to connect the
+            application to Server and Database, check my folder structure if you
+            missed it).
           </p>
           <ProjectsCard des=' 1- Steps to connect with MongoDB' src={pic9} />
           <ProjectsCard des=' 2- Steps to connect with MongoDB' src={pic10} />
@@ -228,11 +230,11 @@ const ProjectsPart2 = () => {
             you push your code to internet like GitHub).
           </p>
           <p className='leading-10 text-lg'>
-            Once you had the link to that need to use to connect with MongoDB.
-            We can work on creating the code at Config folder to connect
-            application with database.&#x26A0; process.env.MONGO_URL is how we
-            connect with your .env file, please make sure you set up .env file
-            and have MONGO_URL in it to avoid error.
+            Once you have the link needed to connect with MongoDB, we can work
+            on creating the code in the Config folder to connect the application
+            with the database.⚠ process.env.MONGO_URL is how we connect with
+            your .env file, and please make sure you set up a .env file and have
+            MONGO_URL in it to avoid the error.
           </p>
           <p className='leading-10 text-lg mb-3'>
             <span className='font-bold'> &#x2713; 3. server.js: </span>
@@ -248,32 +250,31 @@ const ProjectsPart2 = () => {
           <CodeSnip3 des='Setup Server.js' />
           <CodeSnip4 des='Modify Script On Package.json in Backend' />
           <p className='leading-10 text-lg mt-3'>
-            <span className='font-bold'> &#x2713; 4. Model Folder: </span> the
-            models on this application is quite simple with two models which are
-            user model and note model, the user model will link with note model
-            in the database.
+            <span className='font-bold'> &#x2713; 4. Model Folder: </span> In
+            this simple application, there are only two models: the user model
+            and the note model. These models will be linked in the database
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            - User Model: this model will store all user information into
-            MongoDB. Below is a sample code for User model, you can try to
-            create the same way with note model - the note model will link to
-            user model through ObjectId in Mongoose. If you have issues please
-            reference to my code in GitHub.
+            - User Model: This model will store all user information in MongoDB.
+            Below is a sample code for the User model. You can create the note
+            model in the same way, linking it to the user model through the
+            ObjectId in Mongoose. If you encounter any issues, please refer to
+            my code on GitHub.
           </p>
           <CodeSnip5 des='User Model' />
           <p className='leading-10 text-lg mt-3'>
-            <span className='font-bold'> &#x2713; 5. Middleware:</span> as I
-            said on the explanation, middleware provides easy way to developer
-            to keep the code organized and maintainable by separating concerns
-            and promoting reusability. In this application, I used two common
-            middelwares:
+            <span className='font-bold'> &#x2713; 5. Middleware:</span> As I
+            mentioned in the explanation, middleware provides an easy way for
+            developers to keep their code organized and maintainable by
+            separating concerns and promoting reusability. In this application,
+            I have used two common middlewares:
           </p>
           <p className='leading-10 text-lg mb-3 '>
-            - authMiddleware: use to authenticate user when user login.
+            - authMiddleware: used to authenticate the user during login.
           </p>
           <CodeSnip6 des='authMiddelware Simple Code' />
           <p className='leading-10 text-lg mb-3 '>
-            - errorMiddleware: use to catch and handle any unhandled exceptions
+            - errorMiddleware: use to catch and handles any unhandled exceptions
             that may occur in subsequent middleware or route handlers.
           </p>
           <CodeSnip7 des='errorMiddelware Simple Code' />
