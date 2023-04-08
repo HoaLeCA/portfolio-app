@@ -11,7 +11,7 @@ const CodeSnip7 = (props) => {
     message: err.message,
     stack: process.env.NODE_ENV ==='production'?null : err.stack,  
     });
-      // JWT_SECRET store in .env file
+      // NODE_ENV store in .env file
     };
 module.exports = {errorHandler,};`;
   const des = props.des;
